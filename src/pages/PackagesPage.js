@@ -35,12 +35,12 @@ const PackagesPage = () => {
           </div>
           <h2 className="section-title" style={{marginTop: '60px'}}>Party Booking Charges Includes</h2>
           <div className="includes-grid">
-            <div className="include-item">🎮 Unlimited Access For Playzone Games</div>
-            <div className="include-item">🎯 Unlimited Access For Arcade Games</div>
-            <div className="include-item">🎂 Cake Cutting Ceremony On Stage</div>
-            <div className="include-item">🪑 Personalized Sitting Space In Cafe</div>
-            <div className="include-item">🎈 Multicolor Balloon's Decoration</div>
-            <div className="include-item">🎵 Dance/Fun/Party Music</div>
+            <div className="include-item"> Unlimited Access For Playzone Games</div>
+            <div className="include-item"> Unlimited Access For Arcade Games</div>
+            <div className="include-item"> Cake Cutting Ceremony On Stage</div>
+            <div className="include-item"> Personalized Sitting Space In Cafe</div>
+            <div className="include-item"> Multicolor Balloon's Decoration</div>
+            <div className="include-item"> Dance/Fun/Party Music</div>
           </div>
         </div>
       </section>
@@ -123,79 +123,78 @@ const PackagesPage = () => {
           <h2 className="section-title">Terms and Conditions</h2>
           <div className="terms-content">
             <div className="terms-item">
-              <span className="terms-icon">📋</span>
+             
               <p>Additional GST Applicable On Final Billing</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">👥</span>
+              
               <p>Minimum guarantee required to avail the package is 30 Pax.</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">💰</span>
+              
               <p>Minimum Guarantee of kids and adults shall be charged separately in case pax turned up less than minimum guarantee. If count goes over and above to minimum guarantee, actual number shall be charged.</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">📅</span>
+             
               <p>Any changes in minimum guarantee or food menu has to be informed 3 days prior to the event.</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">🚫</span>
+            
               <p>Outside Food & Beverages Will not be permitted.</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">📝</span>
+            
               <p>Kindly submit the menu prior (3 DAYS) of your Party.</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">🍽️</span>
+              
               <p>Food preparation and sitting arrangements shall be provided only for 10% extra to the minimum guarantee given.</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">🎁</span>
+
               <p>There will be provision of 4 complimentary kids upto 4 years only in an event, over and above 4 of upto 4 years kids charges will be applicable as per pre decided package.</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">📦</span>
+              
               <p>There is no provision of food packaging of leftover food.</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">👨‍🍳</span>
+              
               <p>If maid / driver / photographer or others else apart from guests are having the same food the same charges shall be applicable as per pre decided package.</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">⏰</span>
+            
               <p>Event timings will be fixed as per your package timing 15 minutes plus minus</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">⏱️</span>
+            
               <p>Extra hour will be charged with additional ₹5000</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">🎠</span>
+             
               <p>Only the cafe area will be reserved at the time of party. Playzone will remain open for regular guests.</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">🎯</span>
+             
               <p>No other offers can be clubbed with party packages. Any additions besides the package will be charged on actual.</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">🛡️</span>
               <p>We take all possible measures for the security and safety of every child, but in case of any untoward incident, we will not be responsible in any way.</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">🧦</span>
+              
               <p>Socks are mandatory for kids in the play area</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">🍕</span>
+              
               <p>Foods are not allowed in the play area</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">💳</span>
+          
               <p>50% advance is payable at the time of confirmation and balance is payable at the end of the event by credit/ Debit card or cash</p>
             </div>
             <div className="terms-item">
-              <span className="terms-icon">❌</span>
+             
               <p>In-case of cancellation 50% cancellation charges will be applicable of total billing amount & Advance money is not refundable.</p>
             </div>
           </div>

@@ -113,7 +113,7 @@ const HomePage = () => {
           <h2 className="section-title">What We Offer</h2>
           <div className="offer-grid">
             <div className="offer-card">
-              <div className="offer-icon">🎠</div>
+              <div className="offer-icon"></div>
               <h3>Play Areas for All Ages</h3>
               <p>
                 Spanning over a large area, our indoor play zones are designed with different age groups in mind. 
@@ -122,7 +122,7 @@ const HomePage = () => {
               </p>
             </div>
             <div className="offer-card">
-              <div className="offer-icon">🎉</div>
+              <div className="offer-icon"></div>
               <h3>Tailored Party Packages</h3>
               <p>
                 No two events are the same, and that's why we offer customized party packages to fit your unique 
@@ -131,7 +131,7 @@ const HomePage = () => {
               </p>
             </div>
             <div className="offer-card">
-              <div className="offer-icon">🎨</div>
+              <div className="offer-icon"></div>
               <h3>Fun & Interactive Activities</h3>
               <p>
                 Our play zones are equipped with engaging activities that encourage physical activity, creativity, 
@@ -140,7 +140,7 @@ const HomePage = () => {
               </p>
             </div>
             <div className="offer-card">
-              <div className="offer-icon">🏛️</div>
+              <div className="offer-icon"></div>
               <h3>Fully Equipped Event Spaces</h3>
               <p>
                 Our versatile event rooms are designed to accommodate both kids' and adult parties. We provide 
@@ -158,7 +158,7 @@ const HomePage = () => {
           <h2 className="section-title">Why Neeno Land?</h2>
           <div className="why-grid">
             <div className="why-card">
-              <div className="why-icon">🛡️</div>
+              <div className="why-icon"></div>
               <h3>Safety and Security</h3>
               <p>
                 We take the safety of our guests very seriously. All our play areas are regularly cleaned and 
@@ -167,7 +167,7 @@ const HomePage = () => {
               </p>
             </div>
             <div className="why-card">
-              <div className="why-icon">📋</div>
+              <div className="why-icon"></div>
               <h3>Expert Event Planning</h3>
               <p>
                 Planning an event can be stressful, but with Neeno Land, you can leave the hard work to us. 
@@ -176,7 +176,7 @@ const HomePage = () => {
               </p>
             </div>
             <div className="why-card">
-              <div className="why-icon">✨</div>
+              <div className="why-icon"></div>
               <h3>Unforgettable Experiences</h3>
               <p>
                 Every visit to Neeno Land is more than just a playtime – it's an experience. From the moment 

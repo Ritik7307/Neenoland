@@ -11,6 +11,7 @@ const ContactPage = () => {
   const address = '887, 2nd Floor, Niti Khand-1, Indirapuram, Ghaziabad, 201014 Uttar Pradesh, India';
   const instagramUrl = 'https://www.instagram.com/neenolandindia/';
   const facebookUrl = 'https://www.facebook.com/people/Neeno-Land/61582457010789/';
+  const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=887%2C+2nd+Floor%2C+Niti+Khand-1%2C+Indirapuram%2C+Ghaziabad%2C+201014%2C+Uttar+Pradesh%2C+India';
 
   return (
     <div className="contact-page">
@@ -70,6 +71,53 @@ const ContactPage = () => {
                   </svg>
                 </a>
               </div>
+              <a 
+                href={googleMapsUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="maps-link"
+                aria-label="View on Google Maps"
+              >
+                <div className="maps-icon"></div>
+                <span>View on Google Maps</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="map-section">
+        <div className="container">
+          <h2 className="section-title">Find Us</h2>
+          <p className="map-subtitle">Visit us at our location</p>
+          <div className="map-container">
+            <iframe
+              src="https://www.google.com/maps?q=887,+2nd+Floor,+Niti+Khand-1,+Indirapuram,+Ghaziabad,+201014,+Uttar+Pradesh,+India&output=embed"
+              width="100%"
+              height="500"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Neeno Land Location"
+            ></iframe>
+            <div className="map-overlay">
+              <a 
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="map-link-button"
+              >
+                <span></span>
+                <span>Open in Google Maps</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
             </div>
           </div>
         </div>

@@ -85,12 +85,23 @@ const HomePage = () => {
       <section className="story-section">
         <div className="container">
           <h2 className="section-title">Our Story</h2>
-          <p className="section-content">
-            At Neeno Land, we understand that family time is precious, and we believe in making those moments 
-            unforgettable. Our journey began with the simple idea of creating a space where kids could play and 
-            learn, while parents could relax and enjoy themselves. Over time, we've grown into a multi-faceted 
-            event venue offering personalized party experiences and unique play areas designed for children of all ages.
-          </p>
+          <div className="story-content">
+            <div className="story-image">
+              <img 
+                src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=600&fit=crop&q=80" 
+                alt="Neeno Land Event"
+                loading="lazy"
+              />
+            </div>
+            <div className="story-text">
+              <p className="section-content">
+                At Neeno Land, we understand that family time is precious, and we believe in making those moments 
+                unforgettable. Our journey began with the simple idea of creating a space where kids could play and 
+                learn, while parents could relax and enjoy themselves. Over time, we've grown into a multi-faceted 
+                event venue offering personalized party experiences and unique play areas designed for children of all ages.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -194,18 +205,62 @@ const HomePage = () => {
           <h2 className="section-title">Previous Events</h2>
           <p className="gallery-subtitle">Take a look at some of our memorable celebrations</p>
           <div className="gallery-grid">
-            {eventImages.slice(0, 6).map((image, index) => (
-              <div key={index} className="gallery-item">
-                <img 
-                  src={image} 
-                  alt={`Event ${index + 1}`}
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.src = `https://via.placeholder.com/400x300/ff7a00/ffffff?text=Event+${index + 1}`;
-                  }}
-                />
-              </div>
-            ))}
+            {/* Row 1 - Odd row (left to right) */}
+            <div className="gallery-row gallery-row-odd">
+              {eventImages.slice(0, 3).map((image, index) => (
+                <div key={index} className="gallery-item">
+                  <img 
+                    src={image} 
+                    alt={`Event ${index + 1}`}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.src = `https://via.placeholder.com/400x300/ff7a00/ffffff?text=Event+${index + 1}`;
+                    }}
+                  />
+                </div>
+              ))}
+              {/* Duplicate for seamless loop */}
+              {eventImages.slice(0, 3).map((image, index) => (
+                <div key={`dup-${index}`} className="gallery-item">
+                  <img 
+                    src={image} 
+                    alt={`Event ${index + 1}`}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.src = `https://via.placeholder.com/400x300/ff7a00/ffffff?text=Event+${index + 1}`;
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Row 2 - Even row (right to left) */}
+            <div className="gallery-row gallery-row-even">
+              {eventImages.slice(3, 6).map((image, index) => (
+                <div key={index + 3} className="gallery-item">
+                  <img 
+                    src={image} 
+                    alt={`Event ${index + 4}`}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.src = `https://via.placeholder.com/400x300/ff7a00/ffffff?text=Event+${index + 4}`;
+                    }}
+                  />
+                </div>
+              ))}
+              {/* Duplicate for seamless loop */}
+              {eventImages.slice(3, 6).map((image, index) => (
+                <div key={`dup-${index + 3}`} className="gallery-item">
+                  <img 
+                    src={image} 
+                    alt={`Event ${index + 4}`}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.src = `https://via.placeholder.com/400x300/ff7a00/ffffff?text=Event+${index + 4}`;
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

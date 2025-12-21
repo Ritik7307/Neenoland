@@ -25,11 +25,13 @@ A modern React website for Neeno Land, the ultimate party and play destination f
 ### Installation
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Start the development server:
+
 ```bash
 npm start
 ```
@@ -69,11 +71,11 @@ neo-land/
 Update the contact details in `src/components/Home.js`:
 
 ```javascript
-const phoneNumber = '+919876543210'; // Your phone number
-const email = 'info@neenoland.com'; // Your email
-const address = 'Indirapuram, Ghaziabad, Uttar Pradesh'; // Your address
-const instagramUrl = 'https://www.instagram.com/neenoland'; // Your Instagram URL
-const facebookUrl = 'https://www.facebook.com/neenoland'; // Your Facebook URL
+const phoneNumber = "+919876543210"; // Your phone number
+const email = "info@neenoland.com"; // Your email
+const address = "Indirapuram, Ghaziabad, Uttar Pradesh"; // Your address
+const instagramUrl = "https://www.instagram.com/neenoland"; // Your Instagram URL
+const facebookUrl = "https://www.facebook.com/neenoland"; // Your Facebook URL
 ```
 
 ### Gallery Images
@@ -97,4 +99,3 @@ The gallery currently uses Unsplash images. To use your own images:
 - Google Fonts (Poppins)
 - Unsplash API for images
 - WhatsApp Web API integration
-

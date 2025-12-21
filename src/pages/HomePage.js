@@ -51,12 +51,7 @@ const HomePage = () => {
                   <div className="particle particle-6">💫</div>
                 </div>
                 {/* Balloons on the right */}
-                <div className="balloons-container">
-                  <div className="balloon balloon-1">🎈</div>
-                  <div className="balloon balloon-2">🎈</div>
-                  <div className="balloon balloon-3">🎈</div>
-                  <div className="balloon balloon-4">🎈</div>
-                </div>
+                
               </div>
             </div>
             <div className="welcome-text">

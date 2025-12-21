@@ -7,12 +7,12 @@ import WhatsAppButton from '../components/WhatsAppButton';
 const HomePage = () => {
   // Unsplash images for gallery - party and celebration themed
   const eventImages = [
-    'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=600&fit=crop&q=80',
-    'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&h=600&fit=crop',
+    '/images/1G4A2867.JPG',
+    '/images/1G4A2808.JPG',
+    '/images/1G4A2796.JPG',
+    '/images/1G4A2772.JPG',
+    '/images/1G4A2765.JPG',
+    '/images/1G4A2750.JPG',
   ];
 
   return (
@@ -65,7 +65,7 @@ const HomePage = () => {
             <div className="welcome-image animate-pop-delay-2">
               <div className="image-wrapper">
                 <img 
-                  src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=800&fit=crop&q=80" 
+                  src="/images/1G4A2503.JPG" 
                   alt="Kids playing and having fun at Neeno Land"
                   className="main-image"
                 />
@@ -88,7 +88,7 @@ const HomePage = () => {
           <div className="story-content">
             <div className="story-image">
               <img 
-                src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=600&fit=crop&q=80" 
+                src="/images/1G4A2508.JPG" 
                 alt="Neeno Land Event"
                 loading="lazy"
               />

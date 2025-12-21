@@ -5,17 +5,22 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import './GalleryPage.css';
 
 const GalleryPage = () => {
+  // Add your image filenames here (images should be placed in public/images folder)
+  // Example: If you have image1.jpg, image2.jpg, etc., add them like this:
   const eventImages = [
-    'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=600&fit=crop&q=80',
-    'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&h=600&fit=crop',
+    '/images/1G4A2867.JPG',
+    '/images/1G4A2796.JPG',
+    '/images/1G4A2489.JPG',
+    '/images/1G4A2495.JPG',
+    '/images/1G4A2475.JPG',
+    '/images/1G4A2473.JPG',
+    '/images/1G4A2478.JPG',
+    '/images/1G4A2676.JPG',
+    '/images/1G4A2674.JPG',
   ];
+  
+  // Alternative: If you want to use different image names, update the array above
+  // For example: ['/images/event1.jpg', '/images/event2.jpg', ...]
 
   return (
     <div className="gallery-page">

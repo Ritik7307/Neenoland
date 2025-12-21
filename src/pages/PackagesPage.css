@@ -205,6 +205,72 @@
   border-left-width: 6px;
 }
 
+/* Additional Paid Facility Box */
+.additional-facility-box {
+  max-width: 600px;
+  margin: 40px auto 0;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+  border: 2px dashed var(--primary-color);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: var(--shadow-md);
+  animation: fadeInUp 0.6s ease 0.6s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.additional-facility-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-color);
+}
+
+.facility-icon {
+  font-size: 48px;
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.facility-content {
+  flex: 1;
+}
+
+.facility-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 8px 0;
+}
+
+.facility-note {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 20px;
+}
+
 /* Food Packages Section */
 .food-packages-section {
   padding: var(--spacing-2xl) 20px;
@@ -611,6 +677,21 @@
     font-size: 32px;
   }
 
+  .additional-facility-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 30px;
+  }
+
+  .facility-icon {
+    font-size: 40px;
+  }
+
+  .facility-content h3 {
+    font-size: 20px;
+  }
+
   .party-pricing {
     grid-template-columns: 1fr;
     gap: 25px;
@@ -626,6 +707,21 @@
 
   .includes-grid {
     grid-template-columns: 1fr;
+  }
+
+  .additional-facility-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 30px;
+  }
+
+  .facility-icon {
+    font-size: 40px;
+  }
+
+  .facility-content h3 {
+    font-size: 20px;
   }
 
   .menu-content {
@@ -660,6 +756,24 @@
 
   .section-title {
     font-size: 28px;
+  }
+
+  .additional-facility-box {
+    padding: 20px 16px;
+    margin-top: 25px;
+  }
+
+  .facility-icon {
+    font-size: 36px;
+  }
+
+  .facility-content h3 {
+    font-size: 18px;
+  }
+
+  .facility-note {
+    font-size: 12px;
+    padding: 3px 10px;
   }
 
   .pricing-card {

@@ -36,11 +36,19 @@ const PackagesPage = () => {
           <h2 className="section-title" style={{marginTop: '60px'}}>Party Booking Charges Includes</h2>
           <div className="includes-grid">
             <div className="include-item"> Unlimited Access For Playzone Games</div>
-            <div className="include-item"> Unlimited Access For Arcade Games</div>
             <div className="include-item"> Cake Cutting Ceremony On Stage</div>
             <div className="include-item"> Personalized Sitting Space In Cafe</div>
             <div className="include-item"> Multicolor Balloon's Decoration</div>
             <div className="include-item"> Dance/Fun/Party Music</div>
+          </div>
+          
+          {/* Additional Paid Facility */}
+          <div className="additional-facility-box">
+            <div className="facility-icon">🎮</div>
+            <div className="facility-content">
+              <h3>Unlimited Access of Arcade Games</h3>
+              <p className="facility-note">Additional Paid Facility</p>
+            </div>
           </div>
         </div>
       </section>

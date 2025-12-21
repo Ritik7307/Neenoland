@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 
 const Footer = () => {
-  const phoneNumber = '+919876543210';
+  const phoneNumber = '+919266420361';
   const email = 'info@neenoland.com';
   const address = '887, 2nd Floor, Niti Khand-1, Indirapuram, Ghaziabad, 201014 Uttar Pradesh, India';
   const instagramUrl = 'https://www.instagram.com/neenoland';

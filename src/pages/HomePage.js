@@ -3,6 +3,7 @@ import '../components/Home.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import PartyPopper from '../components/PartyPopper';
 
 const HomePage = () => {
   // Unsplash images for gallery - party and celebration themed
@@ -15,32 +16,61 @@ const HomePage = () => {
     '/images/1G4A2750.JPG',
   ];
 
-  return (
-    <div className="home">
-      <Navbar />
+      return (
+        <div className="home">
+          <PartyPopper />
+          <Navbar />
 
       {/* Welcome Section */}
       <section className="welcome-section">
+        {/* Colorful Balloons at Right */}
+        <div className="page-balloons">
+          <div className="balloon-balloon balloon-red"></div>
+          <div className="balloon-balloon balloon-blue"></div>
+          <div className="balloon-balloon balloon-yellow"></div>
+          <div className="balloon-balloon balloon-green"></div>
+          <div className="balloon-balloon balloon-pink"></div>
+          <div className="balloon-balloon balloon-purple"></div>
+        </div>
         <div className="container">
           <div className="welcome-content">
-            <div className="welcome-text">
-              <div className="welcome-badge animate-pop">
-                <span>🎉</span>
-                <span>Welcome to Neeno Land</span>
+            <div className="welcome-image animate-pop-delay-2">
+              <div className="image-wrapper mascot-wrapper">
+                <img 
+                  src="/images/neenoland.png" 
+                  alt="Neeno Land"
+                  className="main-image mascot-image"
+                />
+                {/* Decorative floating particles */}
+                <div className="floating-particles">
+                  <div className="particle particle-1">✨</div>
+                  <div className="particle particle-2">⭐</div>
+                  <div className="particle particle-3">💫</div>
+                  <div className="particle particle-4">✨</div>
+                  <div className="particle particle-5">⭐</div>
+                  <div className="particle particle-6">💫</div>
+                </div>
+                {/* Balloons on the right */}
+                <div className="balloons-container">
+                  <div className="balloon balloon-1">🎈</div>
+                  <div className="balloon balloon-2">🎈</div>
+                  <div className="balloon balloon-3">🎈</div>
+                  <div className="balloon balloon-4">🎈</div>
+                </div>
               </div>
+            </div>
+            <div className="welcome-text">
+              <p className="welcome-message">Welcome to NeenoLand</p>
               <h1 className="welcome-title animate-pop-delay-1">
                 Where Fun, Laughter &<br />
                 <span className="gradient-text-welcome">Memories Come to Life!</span>
               </h1>
               <p className="welcome-description animate-pop-delay-2">
                 The ultimate party and play destination for families in Indirapuram, Ghaziabad. 
-                Create unforgettable moments with your loved ones in our vibrant play area.
+                Create unforgettable moments with your loved ones in our vibrant 4000+ sq ft play area.
               </p>
               <div className="welcome-features animate-pop-delay-3">
-                {/* <div className="feature-item">
-                  <span className="feature-icon">🎠</span>
-                  <span>4000+ Sq. Ft. Play Area</span>
-                </div> */}
+                
                 <div className="feature-item">
                   <span className="feature-icon">🎂</span>
                   <span>Birthday Celebrations</span>
@@ -60,21 +90,6 @@ const HomePage = () => {
                 <a href="/contact" className="welcome-btn secondary">
                   Contact Us
                 </a>
-              </div>
-            </div>
-            <div className="welcome-image animate-pop-delay-2">
-              <div className="image-wrapper">
-                <img 
-                  src="/images/1G4A2503.JPG" 
-                  alt="Kids playing and having fun at Neeno Land"
-                  className="main-image"
-                />
-                <div className="floating-elements">
-                  <div className="float-icon float-1">🎈</div>
-                  <div className="float-icon float-2">🎂</div>
-                  <div className="float-icon float-3">🎁</div>
-                  <div className="float-icon float-4">🎊</div>
-                </div>
               </div>
             </div>
           </div>

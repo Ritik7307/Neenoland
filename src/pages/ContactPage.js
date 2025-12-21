@@ -5,7 +5,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import './ContactPage.css';
 
 const ContactPage = () => {
-  const phoneNumber = '+91-7838860072';
+  const phoneNumber = '+91-9266420361';
   // const phoneNumber2 = '+91-9266420361';
   const email = 'info@neenoland.com';
   const address = '887, 2nd Floor, Niti Khand-1, Indirapuram, Ghaziabad, 201014 Uttar Pradesh, India';

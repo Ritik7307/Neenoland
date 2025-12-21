@@ -89,7 +89,45 @@ html {
 
 /* Selection Color */
 ::selection {
-  background: var(--primary-purple);
+  background: var(--primary-color);
   color: white;
+}
+
+::-moz-selection {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Ensure text is selectable */
+* {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Buttons and interactive elements should not be selectable */
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Ensure text remains visible during selection */
+::selection {
+  background: var(--primary-color) !important;
+  color: white !important;
+  opacity: 1 !important;
+}
+
+::-moz-selection {
+  background: var(--primary-color) !important;
+  color: white !important;
+  opacity: 1 !important;
 }
 

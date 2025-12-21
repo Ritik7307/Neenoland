@@ -2,7 +2,7 @@ import React from 'react';
 import './WhatsAppButton.css';
 
 const WhatsAppButton = () => {
-  const phoneNumber = '+919876543210'; // Replace with actual phone number
+  const phoneNumber = '+919266420361'; // Replace with actual phone number
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent('Hello! I would like to know more about Neeno Land.');

@@ -53,7 +53,7 @@ const PartyPopper = () => {
             />
           ))}
         </div>
-        <div className="popper-text">Welcome to NeonoLand</div>
+        <div className="popper-text">Welcome to Neeno Land</div>
       </div>
     </div>
   );

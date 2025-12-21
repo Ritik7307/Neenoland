@@ -67,7 +67,7 @@ const HomePage = () => {
               </h1>
               <p className="welcome-description animate-pop-delay-2">
                 The ultimate party and play destination for families in Indirapuram, Ghaziabad. 
-                Create unforgettable moments with your loved ones in our vibrant 4000+ sq ft play area.
+                Create unforgettable moments with your loved ones in our vibrant play area.
               </p>
               <div className="welcome-features animate-pop-delay-3">
                 

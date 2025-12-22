@@ -23,6 +23,18 @@ const PackagesPage = () => {
     document.body.style.overflow = 'auto';
   };
 
+  const [selectedInclusion, setSelectedInclusion] = useState(null);
+
+  const openInclusionModal = (inclusion) => {
+    setSelectedInclusion(inclusion);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeInclusionModal = () => {
+    setSelectedInclusion(null);
+    document.body.style.overflow = 'unset';
+  };
+
   // Data for Party Packages
   const partyPackages = [
     {
@@ -143,6 +155,60 @@ const PackagesPage = () => {
     "* Menu can be customized on request"
   ];
 
+  // Data for "Party Booking Charges Includes"
+  const partyInclusions = [
+    {
+      id: 1,
+      title: "Unlimited Access For Playzone Games",
+      images: [
+        "/images/neenoland_playzone.png",
+        "/images/1G4A2473.JPG",
+        "/images/1G4A2475.JPG"
+      ],
+      desc: "Let the kids go wild! Unlimited access to all arcade games, soft play areas, and adventure zones for the entire duration of the party."
+    },
+    {
+      id: 2,
+      title: "Cake Cutting Ceremony On Stage",
+      images: [
+        "/images/neenoland_cake.png",
+        "/images/1G4A2477.JPG",
+        "/images/1G4A2478.JPG"
+      ],
+      desc: "Make your child the star of the show with a grand cake cutting ceremony on our spotlight stage, complete with music and cheers!"
+    },
+    {
+      id: 3,
+      title: "Personalized Sitting Space In Cafe",
+      images: [
+        "/images/1G4A2749.JPG",
+        "/images/1G4A2750.JPG",
+        "/images/1G4A2765.JPG"
+      ],
+      desc: "Enjoy reserved, comfortable seating for your adult guests in our themed cafe area, ensuring everyone can relax and socialize."
+    },
+    {
+      id: 4,
+      title: "Multicolor Balloon's Decoration",
+      images: [
+        "/images/1G4A2643.JPG",
+        "/images/1G4A2645.JPG",
+        "/images/1G4A2674.JPG"
+      ],
+      desc: "We set the mood with vibrant balloon decorations that match your party theme, adding a splash of color and joy to the venue."
+    },
+    {
+      id: 5,
+      title: "Dance/Fun/Party Music",
+      images: [
+        "/images/1G4A2867.JPG",
+        "/images/1G4A2808.JPG",
+        "/images/1G4A2796.JPG"
+      ],
+      desc: "Keep the energy high with our curated party playlists! From kids' favorites to groovy beats, the music never stops."
+    }
+  ];
+
   return (
     <div className="packages-page page-content-spacer">
       <Navbar />
@@ -181,14 +247,19 @@ const PackagesPage = () => {
           </div>
 
           {/* Core Inclusions Summary (Visual Only) */}
-          <div className="inclusions-summary">
-            <h3>Standard Inclusions Across All Parties</h3>
-            <div className="pill-grid">
-              <span>🎉 Playzone Access</span>
-              <span>🎂 Cake Ceremony</span>
-              <span>🎈 Decor</span>
-              <span>🎵 Music</span>
-              <span>☕ Cafe Space</span>
+          {/* Interactive Inclusions Grid */}
+          <div className="inclusions-section">
+            <h2 className="block-title">Party Booking <span className="highlight-text">Charges Includes</span></h2>
+            <div className="inclusions-grid">
+              {partyInclusions.map((item) => (
+                <div
+                  key={item.id}
+                  className="inclusion-card glass-panel"
+                  onClick={() => openInclusionModal(item)}
+                >
+                  <h3>{item.title}</h3>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -248,7 +319,7 @@ const PackagesPage = () => {
       <section className="section-block menu-section">
         <div className="container">
           <h2 className="block-title">OUR <span className="highlight-text">MENU</span></h2>
-          <div className="menu-grid">
+          <div className="menu-container-card glass-panel">
             {Object.entries(menuData).map(([category, items]) => {
               // Icon mapping
               const icons = {
@@ -260,16 +331,17 @@ const PackagesPage = () => {
               };
 
               return (
-                <div key={category} className="menu-category-card">
-                  <div className="category-header">
-                    <span className="category-icon">{icons[category] || "🍽️"}</span>
-                    <h3 className="category-title">{category}</h3>
-                  </div>
-                  <ul className="menu-list">
+                <div key={category} className="menu-details-group">
+                  <h3 className="menu-group-title">
+                    {category}
+                  </h3>
+                  <div className="menu-items-pill-grid">
                     {items.map((item, idx) => (
-                      <li key={idx}>{item}</li>
+                      <div key={idx} className="menu-pill">
+                        <span className="pill-dot">•</span> {item}
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               );
             })}
@@ -281,12 +353,12 @@ const PackagesPage = () => {
       <section className="section-block terms-section">
         <div className="container">
           <h2 className="block-title">TERMS & <span className="highlight-text">CONDITIONS</span></h2>
-          <div className="terms-content">
-            <ul className="terms-list">
-              {termsAndConditions.map((term, idx) => (
-                <li key={idx}>{term}</li>
-              ))}
-            </ul>
+          <div className="terms-grid">
+            {termsAndConditions.map((term, idx) => (
+              <div key={idx} className="term-card glass-panel">
+                <p>{term}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -348,6 +420,26 @@ const PackagesPage = () => {
               <button className="book-btn-modal" onClick={() => handleBookNow(selectedPackage.title)}>
                 Book This Package via WhatsApp
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* INCLUSION DETAIL MODAL */}
+      {selectedInclusion && (
+        <div className="modal-overlay" onClick={closeInclusionModal}>
+          <div className="modal-content glass-panel inclusion-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="close-modal" onClick={closeInclusionModal}>&times;</button>
+            <div className="modal-header">
+              <h2>{selectedInclusion.title}</h2>
+            </div>
+            <div className="modal-body">
+              <div className="inclusion-gallery">
+                {selectedInclusion.images.map((img, index) => (
+                  <img key={index} src={img} alt={`Detail ${index + 1}`} className="inclusion-img" />
+                ))}
+              </div>
+              <p className="inclusion-desc">{selectedInclusion.desc}</p>
             </div>
           </div>
         </div>

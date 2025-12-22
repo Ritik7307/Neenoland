@@ -22,7 +22,7 @@
 
 /* Section Styles */
 .includes-section {
-  padding: var(--spacing-2xl) 20px;
+  padding: 40px 20px;
   background: var(--bg-white);
 }
 
@@ -31,9 +31,9 @@
   font-weight: 800;
   color: var(--text-dark);
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   position: relative;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   animation: fadeInUp 0.6s ease;
 }
 
@@ -64,9 +64,9 @@
 .party-pricing {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 25px;
   max-width: 900px;
-  margin: 50px auto;
+  margin: 30px auto;
   animation: fadeInUp 0.6s ease 0.2s both;
 }
 
@@ -173,9 +173,9 @@
 .includes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 15px;
   max-width: 1000px;
-  margin: 50px auto 0;
+  margin: 30px auto 0;
   animation: fadeInUp 0.6s ease 0.4s both;
 }
 
@@ -246,14 +246,14 @@
 /* Additional Paid Facility Box */
 .additional-facility-box {
   max-width: 600px;
-  margin: 40px auto 0;
+  margin: 25px auto 0;
   background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
   border: 2px dashed var(--primary-color);
   border-radius: var(--radius-lg);
-  padding: 30px;
+  padding: 20px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   box-shadow: var(--shadow-md);
   animation: fadeInUp 0.6s ease 0.6s both;
   position: relative;
@@ -325,16 +325,16 @@
 
 /* Food Packages Section */
 .food-packages-section {
-  padding: var(--spacing-2xl) 20px;
+  padding: 40px 20px;
   background: var(--bg-light);
 }
 
 .food-packages-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 40px;
+  gap: 30px;
   max-width: 1000px;
-  margin: 50px auto 0;
+  margin: 30px auto 0;
 }
 
 .food-package-card {
@@ -361,10 +361,12 @@
 
 .fun-package .package-header {
   background: #ff9800;
+  /* background: #d92d1d; */
 }
 
 .bounce-package .package-header {
   background: #2196f3;
+  /* background: #1c25a7; */
 }
 
 .package-header {
@@ -513,7 +515,7 @@
 
 /* Menu Section */
 .menu-section {
-  padding: var(--spacing-2xl) 20px;
+  padding: 40px 20px;
   background: var(--bg-white);
 }
 
@@ -586,9 +588,9 @@
 /* Single container menu layout (like complimentary) */
 .menu-all-in-one {
   max-width: 1400px;
-  margin: 50px auto 0;
+  margin: 30px auto 0;
   background: var(--bg-light);
-  padding: 40px;
+  padding: 30px;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
 }
@@ -596,7 +598,7 @@
 .menu-categories-container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 .menu-category-group {
@@ -751,23 +753,23 @@
 
 /* Terms and Conditions Section */
 .terms-section {
-  padding: var(--spacing-2xl) 20px;
+  padding: 40px 20px;
   background: var(--bg-white);
 }
 
 .terms-content {
   max-width: 1200px;
-  margin: 50px auto 0;
+  margin: 30px auto 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 15px;
 }
 
 .terms-item {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
-  padding: 25px;
+  gap: 15px;
+  padding: 18px;
   background: var(--bg-light);
   border-radius: var(--radius-md);
   border-left: 5px solid var(--primary-color);

@@ -1,0 +1,55 @@
+.bubble-container {
+    position: absolute;
+    top: -80px;
+    /* Position above the character */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: bubblePop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation-delay: 1s;
+    /* Wait for character to settle */
+    pointer-events: none;
+}
+
+.bubble-container::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20%;
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: white transparent;
+    display: block;
+    width: 0;
+}
+
+.bubble-text {
+    color: #333;
+    font-family: 'Fredoka', 'Nunito', sans-serif;
+    /* Friendly font */
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.highlight {
+    color: #ff6b6b;
+    /* Neenoland accent color */
+}
+
+@keyframes bubblePop {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0) translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1) translateY(0);
+    }
+}

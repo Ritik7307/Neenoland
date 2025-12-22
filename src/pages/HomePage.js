@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import { useNavigate } from 'react-router-dom';
+import ExperimentalLayer from '../components/ExperimentalLayer';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -201,6 +202,7 @@ const HomePage = () => {
       </section>
 
       <WhatsAppButton />
+      <ExperimentalLayer />
       <Footer />
     </div>
   );

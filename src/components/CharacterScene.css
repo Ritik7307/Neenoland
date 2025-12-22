@@ -1,0 +1,35 @@
+/* Default (Desktop) */
+.character-scene-container {
+    position: absolute;
+    bottom: 0px;
+    left: -60px;
+    width: 350px;
+    height: 450px;
+    z-index: 10001;
+    /* Allow clicks to pass through empty space if Canvas handles it correctly, 
+       but usually Canvas grabs all events. 
+       Since we disabled controls, we can set this to none to ensure 
+       buttons behind the character are clickable. 
+    */
+    pointer-events: none;
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .character-scene-container {
+        width: 220px;
+        height: 280px;
+        left: -65px;
+        /* Slight offset to tuck it in */
+        bottom: 0px;
+    }
+}
+
+/* Very Small Screens */
+@media (max-width: 480px) {
+    .character-scene-container {
+        width: 180px;
+        height: 240px;
+        left: -10px;
+    }
+}

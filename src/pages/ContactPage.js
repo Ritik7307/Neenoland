@@ -9,8 +9,8 @@ const ContactPage = () => {
   // const phoneNumber2 = '+91-9266420361';
   const email = 'info@neenoland.com';
   const address = '887, 2nd Floor, Niti Khand-1, Indirapuram, Ghaziabad, 201014 Uttar Pradesh, India';
-  const instagramUrl = 'https://www.instagram.com/neenolandindia/';
-  const facebookUrl = 'https://www.facebook.com/people/Neeno-Land/61582457010789/';
+  const instagramUrl = 'https://www.instagram.com/neenolandindia?igsh=dWR3dzJuM2xrMXMz';
+  const facebookUrl = 'https://www.facebook.com/share/184gYNuv4V/';
   const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=887%2C+2nd+Floor%2C+Niti+Khand-1%2C+Indirapuram%2C+Ghaziabad%2C+201014%2C+Uttar+Pradesh%2C+India';
 
   return (

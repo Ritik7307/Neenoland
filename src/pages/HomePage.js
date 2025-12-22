@@ -36,10 +36,18 @@ const HomePage = () => {
           <div className="welcome-content">
             <div className="welcome-image animate-pop-delay-2">
               <div className="image-wrapper mascot-wrapper">
-                <img 
+                {/* <img 
                   src="/images/neenoland.png" 
                   alt="Neeno Land"
                   className="main-image mascot-image"
+                /> */}
+                <video 
+                  src="/images/video.mp4" 
+                  className="main-image mascot-video" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
                 />
                 {/* Decorative floating particles */}
                 <div className="floating-particles">

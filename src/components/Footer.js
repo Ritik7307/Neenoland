@@ -5,8 +5,8 @@ const Footer = () => {
   const phoneNumber = '+919266420361';
   const email = 'info@neenoland.com';
   const address = '887, 2nd Floor, Niti Khand-1, Indirapuram, Ghaziabad, 201014 Uttar Pradesh, India';
-  const instagramUrl = 'https://www.instagram.com/neenoland';
-  const facebookUrl = 'https://www.facebook.com/neenoland';
+  const instagramUrl = 'https://www.instagram.com/neenolandindia?igsh=dWR3dzJuM2xrMXMz';
+  const facebookUrl = 'https://www.facebook.com/share/184gYNuv4V/';
 
   return (
     <footer className="footer">

@@ -30,7 +30,7 @@ const Navbar = () => {
         window.scrollTo(0, parseInt(scrollY || '0') * -1);
       }
     }
-    
+
     // Cleanup on unmount
     return () => {
       document.body.style.overflow = '';
@@ -53,9 +53,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <Link to="/" className="logo" onClick={closeMenu}>
-        <img 
-          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,fit=crop,q=95/AoPqJvwLLKugBZVa/neeno-land-logo-YNqMarZv7OuRLBeL.png" 
-          alt="Neeno Land Logo" 
+        <img
+          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,fit=crop,q=95/AoPqJvwLLKugBZVa/neeno-land-logo-YNqMarZv7OuRLBeL.png"
+          alt="Neeno Land Logo"
           className="logo-image"
         />
       </Link>
@@ -79,9 +79,10 @@ const Navbar = () => {
             Our Packages
           </Link>
         </li>
+
         <li>
-          <Link to="/gallery" className={location.pathname === '/gallery' ? 'active' : ''} onClick={closeMenu}>
-            Gallery
+          <Link to="/about" className={location.pathname === '/about' ? 'active' : ''} onClick={closeMenu}>
+            About Us
           </Link>
         </li>
         <li>

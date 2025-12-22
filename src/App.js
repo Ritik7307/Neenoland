@@ -4,18 +4,21 @@ import './App.css';
 import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import PackagesPage from './pages/PackagesPage';
-import GalleryPage from './pages/GalleryPage';
+
 import ContactPage from './pages/ContactPage';
+import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
+      <div className="noise-overlay"></div> {/* Cinematic Grain */}
       <div className="App">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/packages" element={<PackagesPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
+
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </div>

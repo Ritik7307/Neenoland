@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import anime from 'animejs/lib/anime.es.js';
+import anime from 'animejs';
 import '../components/Home.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -108,7 +108,7 @@ const HomePage = () => {
               <div className="bento-content">
                 <h3>Soft Play Area</h3>
                 <p>Safe & colorful adventures for little ones.</p>
-                <div className="bento-icon">🏰</div>
+                {/* <div className="bento-icon">🏰</div> */}
               </div>
             </div>
 
@@ -118,7 +118,7 @@ const HomePage = () => {
               <div className="bento-content">
                 <h3>Global Tastes Cafe</h3>
                 <p>Delicious treats while you play.</p>
-                <div className="bento-icon">🍔</div>
+                {/* <div className="bento-icon">🍔</div> */}
               </div>
             </div>
 
@@ -128,7 +128,7 @@ const HomePage = () => {
               <div className="bento-content">
                 <h3>Arcade Zone</h3>
                 <p>Next-gen gaming experience.</p>
-                <div className="bento-icon">🕹️</div>
+                {/* <div className="bento-icon">🕹️</div> */}
               </div>
             </div>
 
@@ -138,7 +138,7 @@ const HomePage = () => {
               <div className="bento-content">
                 <h3>Trampoline Park</h3>
                 <p>Jump high and defy gravity!</p>
-                <div className="bento-icon">🤸</div>
+                {/* <div className="bento-icon">🤸</div> */}
               </div>
             </div>
 
@@ -147,18 +147,19 @@ const HomePage = () => {
               <div className="bento-bg" style={{ backgroundImage: "url('/images/1G4A2749.JPG')" }}></div>
               <div className="bento-content centered">
                 <h3>VR World</h3>
-                <div className="bento-icon">🕶️</div>
+                <p>Play beyond reality</p>
+                {/* <div className="bento-icon">🕶️</div> */}
               </div>
             </div>
 
             {/* Small Item: Bowling */}
-            <div className="bento-item small box-bowling">
+            {/* <div className="bento-item small box-bowling">
               <div className="bento-bg" style={{ backgroundImage: "url('/images/1G4A2765.JPG')" }}></div>
               <div className="bento-content centered">
                 <h3>Bowling</h3>
                 <div className="bento-icon">🎳</div>
               </div>
-            </div>
+            </div> */}
 
           </div>
         </div>

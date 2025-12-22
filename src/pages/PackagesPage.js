@@ -77,7 +77,7 @@ const PackagesPage = () => {
   const foodPackages = [
     {
       id: 'f1',
-      title: "Fun Munchies",
+      title: "Fun Package",
       type: "Food Package",
       vegPrice: "₹ 799",
       nonVegPrice: "₹ 899",
@@ -91,7 +91,7 @@ const PackagesPage = () => {
     },
     {
       id: 'f2',
-      title: "Royal Feast",
+      title: "Ball & Bounce Package",
       type: "Food Package",
       vegPrice: "₹ 999",
       nonVegPrice: "₹ 1,099",
@@ -102,6 +102,20 @@ const PackagesPage = () => {
         { label: "Desserts", value: "Choice of any 2" }
       ],
       color: "#2196f3"
+    },
+    {
+      id: 'f3',
+      title: "Rockstar Package",
+      type: "Food Package",
+      vegPrice: "₹ 1199",
+      nonVegPrice: "₹ 1299",
+      items: [
+        { label: "Starter", value: "Choice of any 5" },
+        { label: "Main Course", value: "Choice of any 5" },
+        { label: "Beverages", value: "Choice of any 4" },
+        { label: "Desserts", value: "Choice of any 2" }
+      ],
+      color: "#ff9800"
     }
   ];
 
@@ -333,6 +347,7 @@ const PackagesPage = () => {
               return (
                 <div key={category} className="menu-details-group">
                   <h3 className="menu-group-title">
+                    {icons[category] && <span>{icons[category]} </span>}
                     {category}
                   </h3>
                   <div className="menu-items-pill-grid">

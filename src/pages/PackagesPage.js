@@ -1,331 +1,358 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import './PackagesPage.css';
 
 const PackagesPage = () => {
+  const [selectedPackage, setSelectedPackage] = useState(null);
+
   const handleBookNow = (packageType) => {
     const message = encodeURIComponent(`Hello! I would like to book ${packageType} package.`);
     const phoneNumber = '+919876543210';
     window.open(`https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${message}`, '_blank');
   };
 
+  const openModal = (pkg) => {
+    setSelectedPackage(pkg);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setSelectedPackage(null);
+    document.body.style.overflow = 'auto';
+  };
+
+  // Data for Party Packages
+  const partyPackages = [
+    {
+      id: 1,
+      title: "Silver Celebration",
+      price: "₹ 15,999",
+      duration: "3 Hours",
+      tag: "Popular",
+      desc: "Perfect for intimate gatherings and small birthday parties.",
+      inclusions: [
+        "Unlimited Access For Playzone Games",
+        "Cake Cutting Ceremony On Stage",
+        "Personalized Sitting Space In Cafe",
+        "Multicolor Balloon Decoration",
+        "Dance/Fun/Party Music"
+      ],
+      color: "var(--secondary-color)"
+    },
+    {
+      id: 2,
+      title: "Gold Gala",
+      price: "₹ 19,999",
+      duration: "4 Hours",
+      tag: "Best Value",
+      desc: "Ideal for grand celebrations with extended fun time.",
+      inclusions: [
+        "Unlimited Access For Playzone Games",
+        "Cake Cutting Ceremony On Stage",
+        "Personalized Sitting Space In Cafe",
+        "Premium Balloon Decoration",
+        "Dance/Fun/Party Music",
+        "Welcome Drink for Kids"
+      ],
+      color: "var(--primary-color)",
+      featured: true
+    }
+  ];
+
+  // Data for Food Packages
+  const foodPackages = [
+    {
+      id: 'f1',
+      title: "Fun Munchies",
+      type: "Food Package",
+      vegPrice: "₹ 799",
+      nonVegPrice: "₹ 899",
+      items: [
+        { label: "Starter", value: "Choice of any 3" },
+        { label: "Main Course", value: "Choice of any 3" },
+        { label: "Beverages", value: "Choice of any 1" },
+        { label: "Desserts", value: "Choice of any 1" }
+      ],
+      color: "#ff9800"
+    },
+    {
+      id: 'f2',
+      title: "Royal Feast",
+      type: "Food Package",
+      vegPrice: "₹ 999",
+      nonVegPrice: "₹ 1,099",
+      items: [
+        { label: "Starter", value: "Choice of any 4" },
+        { label: "Main Course", value: "Choice of any 4" },
+        { label: "Beverages", value: "Choice of any 2" },
+        { label: "Desserts", value: "Choice of any 2" }
+      ],
+      color: "#2196f3"
+    }
+  ];
+
+  const menuData = {
+    "Starters": [
+      "Masala French Fries", "Potato Wedges", "Potato Smiles", "Veggie Nuggets", "Honey Chilli Potato",
+      "Coleslaw Sandwich", "Dim Sim Steamed", "Dim Sim Fried", "Hara Bhara Kabab", "Nachos",
+      "Popcorns", "Wafers", "Spring Rolls", "Veg Salt & Pepper", "Assorted Pakora",
+      "Masala Corn", "White Chana Chaat", "Black Chana Chaat", "Fried Chaap Masala", "Dahi Ke Sholay",
+      "Dry Veg Manchurian", "Dry Chilli Paneer", "Masala Peanut", "Aloo Chat", "Stone Oven Pizza"
+    ],
+    "Veg Main Course": [
+      "White Sauce Pasta", "Red Sauce Pasta", "Mix Sauce Pasta", "Burgers", "Vegetable Bhaji",
+      "Boiled Matar Masala", "Paneer Bhurji", "Veg Manchurian gravy", "Chilly Paneer gravy",
+      "Matar Paneer", "Paneer Makhni", "Kadhai Paneer", "Shahi Paneer", "Mix Veg",
+      "Palak Paneer", "Jeera Aloo", "Dal Makhni", "Dal Tadka"
+    ],
+    "Beverages": [
+      "Hot n Sour", "Soft Drinks", "Masala Lemonade", "Ice-Tea", "Coffee", "Cold Coffee"
+    ],
+    "Desserts": [
+      "Chocolate Brownie", "Brownie Sundae", "Moong Dal Halwa", "Cold Kheer", "Gajar Ka Halwa",
+      "Ice cream", "Gulab Jamun", "Shahi Tukda", "Rasogolla"
+    ],
+    "Complimentary Add On Items": [
+      "Choice Of Any One Rice Item: (Plain Rice, Jeera Rice, Matar Pulao, Veg Pulao)",
+      "Choice Of Any Two Breads: (Missi Roti, Tawa Roti, Butter Naan, Pav bread, Kulcha bread, Bhature, Tawa Lachha Paratha, Puri)"
+    ]
+  };
+
+  const termsAndConditions = [
+    "Additional GST Applicable On Final Billing",
+    "Minimum guarantee required to avail the package is 30 Pax.",
+    "Minimum Guarantee of kids and adults shall be charged separately in case pax turned up less than minimum guarantee. If count goes over and above to minimum guarantee, actual number shall be charged.",
+    "Any changes in minimum guarantee or food menu has to be informed 3 days prior to the event.",
+    "Outside Food & Beverages Will not be permitted.",
+    "Kindly submit the menu prior (3 DAYS) of your Party.",
+    "Food preparation and sitting arrangements shall be provided only for 10% extra to the minimum guarantee given.",
+    "There will be provision of 4 complimentary kids upto 4 years only in an event, over and above 4 of upto 4 years kids charges will be applicable as per pre decided package.",
+    "There is no provision of food packaging of leftover food.",
+    "If maid / driver / photographer or others else apart from guests are having the same food the same charges shall be applicable as per pre decided package.",
+    "Event timings will be fixed as per your package timing 15 minutes plus minus",
+    "Extra hour will be charged with additional ₹5000",
+    "Only the cafe area will be reserved at the time of party. Playzone will remain open for regular guests.",
+    "No other offers can be clubbed with party packages. Any additions besides the package will be charged on actual.",
+    "We take all possible measures for the security and safety of every child, but in case of any untoward incident, we will not be responsible in any way.",
+    "Socks are mandatory for kids in the play area",
+    "Foods are not allowed in the play area",
+    "50% advance is payable at the time of confirmation and balance is payable at the end of the event by credit/ Debit card or cash",
+    "In-case of cancellation 50% cancellation charges will be applicable of total billing amount & Advance money is not refundable.",
+    "* Menu can be customized on request"
+  ];
+
   return (
-    <div className="packages-page">
+    <div className="packages-page page-content-spacer">
       <Navbar />
-      
-      {/* Party Booking Includes */}
-      <section className="includes-section">
+
+      {/* Hero / Header */}
+      <section className="packages-hero">
         <div className="container">
-          <h2 className="section-title">Book Your Party With Us</h2>
-          <div className="party-pricing">
-            <div className="pricing-card">
-              <div className="pricing-badge">Popular</div>
-              <h2>₹ 15,999</h2>
-              <p>For 3 Hours</p>
-              <div className="pricing-feature">Perfect for small gatherings</div>
-            </div>
-            <div className="pricing-card featured">
-              <div className="pricing-badge">Best Value</div>
-              <h2>₹ 19,999</h2>
-              <p>For 4 Hours</p>
-              <div className="pricing-feature">Ideal for grand celebrations</div>
-            </div>
+          <h1 className="page-title">CHOOSE YOUR <span className="highlight-text">FUN</span></h1>
+          <p className="page-subtitle">Curated packages for every celebration</p>
+        </div>
+      </section>
+
+      {/* Party Packages Block */}
+      <section className="section-block">
+        <div className="container">
+          <h2 className="block-title">Party Packages</h2>
+          <div className="packages-grid">
+            {partyPackages.map((pkg) => (
+              <div
+                key={pkg.id}
+                className={`package-card ${pkg.featured ? 'featured' : ''}`}
+                onClick={() => openModal(pkg)}
+              >
+                {pkg.tag && <div className="card-badge">{pkg.tag}</div>}
+                <div className="card-header" style={{ borderBottomColor: pkg.color }}>
+                  <h3>{pkg.title}</h3>
+                  <div className="price">{pkg.price}</div>
+                  <div className="duration">{pkg.duration}</div>
+                </div>
+                <div className="card-body">
+                  <p>{pkg.desc}</p>
+                  <button className="view-btn">View Details & Inclusions</button>
+                </div>
+              </div>
+            ))}
           </div>
-          <h2 className="section-title" style={{marginTop: '60px'}}>Party Booking Charges Includes</h2>
-          <div className="includes-grid">
-            <div className="include-item"> Unlimited Access For Playzone Games</div>
-            <div className="include-item"> Cake Cutting Ceremony On Stage</div>
-            <div className="include-item"> Personalized Sitting Space In Cafe</div>
-            <div className="include-item"> Multicolor Balloon's Decoration</div>
-            <div className="include-item"> Dance/Fun/Party Music</div>
-          </div>
-          
-          {/* Additional Paid Facility */}
-          <div className="additional-facility-box">
-            <div className="facility-icon">🎮</div>
-            <div className="facility-content">
-              <h3>Unlimited Access of Arcade Games</h3>
-              <p className="facility-note">Additional Paid Facility</p>
+
+          {/* Core Inclusions Summary (Visual Only) */}
+          <div className="inclusions-summary">
+            <h3>Standard Inclusions Across All Parties</h3>
+            <div className="pill-grid">
+              <span>🎉 Playzone Access</span>
+              <span>🎂 Cake Ceremony</span>
+              <span>🎈 Decor</span>
+              <span>🎵 Music</span>
+              <span>☕ Cafe Space</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Food Packages */}
-      <section className="food-packages-section">
+      {/* Arcade Addon */}
+      <section className="section-block arcade-block">
         <div className="container">
-          <h2 className="section-title">Unlimited Food Packages</h2>
-          <div className="food-packages-grid">
-            {/* Fun Package */}
-            <div className="food-package-card fun-package">
-              <div className="package-header">
-                <h3>Fun Package</h3>
-              </div>
-              <div className="package-content">
-                <div className="package-item">
-                  <span className="item-label">Starter:</span>
-                  <span className="item-value">Choice of any 3</span>
-                </div>
-                <div className="package-item">
-                  <span className="item-label">Main Course:</span>
-                  <span className="item-value">Choice of any 3</span>
-                </div>
-                <div className="package-item">
-                  <span className="item-label">Beverages:</span>
-                  <span className="item-value">Choice of any 1</span>
-                </div>
-                <div className="package-item">
-                  <span className="item-label">Desserts:</span>
-                  <span className="item-value">Choice of any 1</span>
-                </div>
-                <div className="package-pricing">
-                  <div className="price-tag veg">Veg ₹ 799/-</div>
-                  <div className="price-tag non-veg">Non-Veg ₹ 899/-</div>
-                </div>
-                <button className="book-btn" onClick={() => handleBookNow('Fun Package')}>
-                  Book Now
-                </button>
-              </div>
+          <div className="addon-banner">
+            <div className="addon-icon">🕹️</div>
+            <div className="addon-info">
+              <h3>Unlimited Arcade Games</h3>
+              <p>Add this to any package for the ultimate gaming experience!</p>
             </div>
-
-            {/* Ball & Bounce Package */}
-            <div className="food-package-card bounce-package">
-              <div className="package-header">
-                <h3>Ball & Bounce Package</h3>
-              </div>
-              <div className="package-content">
-                <div className="package-item">
-                  <span className="item-label">Starter:</span>
-                  <span className="item-value">Choice of any 4</span>
-                </div>
-                <div className="package-item">
-                  <span className="item-label">Main Course:</span>
-                  <span className="item-value">Choice of any 4</span>
-                </div>
-                <div className="package-item">
-                  <span className="item-label">Beverages:</span>
-                  <span className="item-value">Choice of any 2</span>
-                </div>
-                <div className="package-item">
-                  <span className="item-label">Desserts:</span>
-                  <span className="item-value">Choice of any 2</span>
-                </div>
-                <div className="package-pricing">
-                  <div className="price-tag veg">Veg ₹ 999/-</div>
-                  <div className="price-tag non-veg">Non-Veg ₹ 1,099/-</div>
-                </div>
-                <button className="book-btn" onClick={() => handleBookNow('Ball & Bounce Package')}>
-                  Book Now
-                </button>
-              </div>
-            </div>
+            <div className="addon-tag">PAID ADD-ON</div>
           </div>
         </div>
       </section>
 
-      {/* Terms and Conditions Section */}
-      <section className="terms-section">
+      {/* Food Packages Block */}
+      <section className="section-block food-block">
         <div className="container">
-          <h2 className="section-title">Terms and Conditions</h2>
+          <h2 className="block-title">Food & Dining</h2>
+          <div className="packages-grid">
+            {foodPackages.map((pkg) => (
+              <div
+                key={pkg.id}
+                className="package-card food-card"
+                onClick={() => openModal(pkg)}
+              >
+                <div className="card-header" style={{ background: pkg.color, color: 'white' }}>
+                  <h3>{pkg.title}</h3>
+                  <p>Unlimited Buffet</p>
+                </div>
+                <div className="card-body">
+                  <div className="mini-menu-preview">
+                    {pkg.items.slice(0, 2).map((item, i) => (
+                      <div key={i} className="mini-item">
+                        <strong>{item.label}:</strong> {item.value}
+                      </div>
+                    ))}
+                    <div className="more-text">+ Beverages & Desserts</div>
+                  </div>
+                  <div className="price-row">
+                    <span>Veg: {pkg.vegPrice}</span>
+                    <span>Non-Veg: {pkg.nonVegPrice}</span>
+                  </div>
+                  <button className="view-btn">View Menu</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* NEW MENU SECTION */}
+      <section className="section-block menu-section">
+        <div className="container">
+          <h2 className="block-title">OUR <span className="highlight-text">MENU</span></h2>
+          <div className="menu-grid">
+            {Object.entries(menuData).map(([category, items]) => {
+              // Icon mapping
+              const icons = {
+                "Starters": "🍟",
+                "Veg Main Course": "🥘",
+                "Beverages": "🍹",
+                "Desserts": "🍰",
+                "Complimentary Add On Items": "✨"
+              };
+
+              return (
+                <div key={category} className="menu-category-card">
+                  <div className="category-header">
+                    <span className="category-icon">{icons[category] || "🍽️"}</span>
+                    <h3 className="category-title">{category}</h3>
+                  </div>
+                  <ul className="menu-list">
+                    {items.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* TERMS AND CONDITIONS */}
+      <section className="section-block terms-section">
+        <div className="container">
+          <h2 className="block-title">TERMS & <span className="highlight-text">CONDITIONS</span></h2>
           <div className="terms-content">
-            <div className="terms-item">
-             
-              <p>Additional GST Applicable On Final Billing</p>
-            </div>
-            <div className="terms-item">
-              
-              <p>Minimum guarantee required to avail the package is 30 Pax.</p>
-            </div>
-            <div className="terms-item">
-              
-              <p>Minimum Guarantee of kids and adults shall be charged separately in case pax turned up less than minimum guarantee. If count goes over and above to minimum guarantee, actual number shall be charged.</p>
-            </div>
-            <div className="terms-item">
-             
-              <p>Any changes in minimum guarantee or food menu has to be informed 3 days prior to the event.</p>
-            </div>
-            <div className="terms-item">
-            
-              <p>Outside Food & Beverages Will not be permitted.</p>
-            </div>
-            <div className="terms-item">
-            
-              <p>Kindly submit the menu prior (3 DAYS) of your Party.</p>
-            </div>
-            <div className="terms-item">
-              
-              <p>Food preparation and sitting arrangements shall be provided only for 10% extra to the minimum guarantee given.</p>
-            </div>
-            <div className="terms-item">
-
-              <p>There will be provision of 4 complimentary kids upto 4 years only in an event, over and above 4 of upto 4 years kids charges will be applicable as per pre decided package.</p>
-            </div>
-            <div className="terms-item">
-              
-              <p>There is no provision of food packaging of leftover food.</p>
-            </div>
-            <div className="terms-item">
-              
-              <p>If maid / driver / photographer or others else apart from guests are having the same food the same charges shall be applicable as per pre decided package.</p>
-            </div>
-            <div className="terms-item">
-            
-              <p>Event timings will be fixed as per your package timing 15 minutes plus minus</p>
-            </div>
-            <div className="terms-item">
-            
-              <p>Extra hour will be charged with additional ₹5000</p>
-            </div>
-            <div className="terms-item">
-             
-              <p>Only the cafe area will be reserved at the time of party. Playzone will remain open for regular guests.</p>
-            </div>
-            <div className="terms-item">
-             
-              <p>No other offers can be clubbed with party packages. Any additions besides the package will be charged on actual.</p>
-            </div>
-            <div className="terms-item">
-              <p>We take all possible measures for the security and safety of every child, but in case of any untoward incident, we will not be responsible in any way.</p>
-            </div>
-            <div className="terms-item">
-              
-              <p>Socks are mandatory for kids in the play area</p>
-            </div>
-            <div className="terms-item">
-              
-              <p>Foods are not allowed in the play area</p>
-            </div>
-            <div className="terms-item">
-          
-              <p>50% advance is payable at the time of confirmation and balance is payable at the end of the event by credit/ Debit card or cash</p>
-            </div>
-            <div className="terms-item">
-             
-              <p>In-case of cancellation 50% cancellation charges will be applicable of total billing amount & Advance money is not refundable.</p>
-            </div>
+            <ul className="terms-list">
+              {termsAndConditions.map((term, idx) => (
+                <li key={idx}>{term}</li>
+              ))}
+            </ul>
           </div>
-        </div>
-      </section>
-
-      {/* Menu Section */}
-      <section className="menu-section">
-        <div className="container">
-          <h2 className="section-title">Our Menu</h2>
-          <div className="menu-content">
-            <div className="menu-category">
-              <h3>Starters</h3>
-              <div className="menu-items">
-                <div className="menu-item">Masala French Fries</div>
-                <div className="menu-item">Potato Wedges</div>
-                <div className="menu-item">Potato Smiles</div>
-                <div className="menu-item">Veggie Nuggets</div>
-                <div className="menu-item">Honey Chilli Potato</div>
-                <div className="menu-item">Coleslaw Sandwich</div>
-                <div className="menu-item">Dim Sim Steamed</div>
-                <div className="menu-item">Dim Sim Fried</div>
-                <div className="menu-item">Hara Bhara Kabab</div>
-                <div className="menu-item">Nachos</div>
-                <div className="menu-item">Popcorns</div>
-                <div className="menu-item">Wafers</div>
-                <div className="menu-item">Spring Rolls</div>
-                <div className="menu-item">Veg Salt & Pepper</div>
-                <div className="menu-item">Assorted Pakora</div>
-                <div className="menu-item">Masala Corn</div>
-                <div className="menu-item">White Chana Chaat</div>
-                <div className="menu-item">Black Chana Chaat</div>
-                <div className="menu-item">Fried Chaap Masala</div>
-                <div className="menu-item">Dahi Ke Sholay</div>
-                <div className="menu-item">Dry Veg Manchurian</div>
-                <div className="menu-item">Dry Chilli Paneer</div>
-                <div className="menu-item">Masala Peanut</div>
-                <div className="menu-item">Aloo Chat</div>
-                <div className="menu-item">Stone Oven Pizza</div>
-              </div>
-            </div>
-            <div className="menu-category">
-              <h3>Veg Main Course</h3>
-              <div className="menu-items">
-                <div className="menu-item">White Sauce Pasta</div>
-                <div className="menu-item">Red Sauce Pasta</div>
-                <div className="menu-item">Mix Sauce Pasta</div>
-                <div className="menu-item">Burgers</div>
-                <div className="menu-item">Vegetable Bhaji</div>
-                <div className="menu-item">Boiled Matar Masala</div>
-                <div className="menu-item">Paneer Bhurji</div>
-                <div className="menu-item">Veg Manchurian gravy</div>
-                <div className="menu-item">Chilly Paneer gravy</div>
-                <div className="menu-item">Matar Paneer</div>
-                <div className="menu-item">Paneer Makhni</div>
-                <div className="menu-item">Kadhai Paneer</div>
-                <div className="menu-item">Shahi Paneer</div>
-                <div className="menu-item">Mix Veg</div>
-                <div className="menu-item">Palak Paneer</div>
-                <div className="menu-item">Jeera Aloo</div>
-                <div className="menu-item">Dal Makhni</div>
-                <div className="menu-item">Dal Tadka</div>
-              </div>
-            </div>
-            <div className="menu-category">
-              <h3>Beverages</h3>
-              <div className="menu-items">
-                <div className="menu-item">Hot n Sour</div>
-                <div className="menu-item">Soft Drinks</div>
-                <div className="menu-item">Masala Lemonade</div>
-                <div className="menu-item">Ice-Tea</div>
-                <div className="menu-item">Coffee</div>
-                <div className="menu-item">Cold Coffee</div>
-              </div>
-            </div>
-            <div className="menu-category">
-              <h3>Desserts</h3>
-              <div className="menu-items">
-                <div className="menu-item">Chocolate Brownie</div>
-                <div className="menu-item">Brownie Sundae</div>
-                <div className="menu-item">Moong Dal Halwa</div>
-                <div className="menu-item">Cold Kheer</div>
-                <div className="menu-item">Gajar Ka Halwa</div>
-                <div className="menu-item">Ice cream</div>
-                <div className="menu-item">Gulab Jamun</div>
-                <div className="menu-item">Shahi Tukda</div>
-                <div className="menu-item">Rasogolla</div>
-              </div>
-            </div>
-            <div className="menu-category complimentary">
-              <h3>Complimentary Add On Items</h3>
-              <div className="complimentary-section">
-                <div className="complimentary-group">
-                  <h4>Choice Of Any One Rice Item:</h4>
-                  <div className="menu-items">
-                    <div className="menu-item">Plain Rice</div>
-                    <div className="menu-item">Jeera Rice</div>
-                    <div className="menu-item">Matar Pulao</div>
-                    <div className="menu-item">Veg Pulao</div>
-                  </div>
-                </div>
-                <div className="complimentary-group">
-                  <h4>Choice Of Any Two Breads:</h4>
-                  <div className="menu-items">
-                    <div className="menu-item">Missi Roti</div>
-                    <div className="menu-item">Tawa Roti</div>
-                    <div className="menu-item">Butter Naan</div>
-                    <div className="menu-item">Pav bread</div>
-                    <div className="menu-item">Kulcha bread</div>
-                    <div className="menu-item">Bhature</div>
-                    <div className="menu-item">Tawa Lachha Paratha</div>
-                    <div className="menu-item">Puri</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p className="menu-note">* Menu can be customized on request</p>
         </div>
       </section>
 
       <WhatsAppButton />
       <Footer />
+
+      {/* PACKAGE DETAIL MODAL */}
+      {selectedPackage && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content glass-panel" onClick={(e) => e.stopPropagation()}>
+            <button className="close-modal" onClick={closeModal}>&times;</button>
+
+            <div className="modal-header">
+              <h2>{selectedPackage.title}</h2>
+              {selectedPackage.price && <div className="modal-price">{selectedPackage.price} <span className="small">/ {selectedPackage.duration}</span></div>}
+            </div>
+
+            <div className="modal-body scrollable">
+              {/* Render content based on package type */}
+
+              {/* Party Package Content */}
+              {selectedPackage.inclusions && (
+                <>
+                  <h3>Package Inclusions:</h3>
+                  <ul className="modal-list">
+                    {selectedPackage.inclusions.map((inc, i) => (
+                      <li key={i}>{inc}</li>
+                    ))}
+                  </ul>
+                  <div className="modal-note">
+                    <p><strong>Note:</strong> Minimum guarantee required is 30 Pax.</p>
+                  </div>
+                </>
+              )}
+
+              {/* Food Package Content */}
+              {selectedPackage.items && (
+                <>
+                  <h3>Menu Inclusions:</h3>
+                  <div className="food-details-grid">
+                    {selectedPackage.items.map((item, i) => (
+                      <div key={i} className="food-detail-item">
+                        <strong>{item.label}</strong>
+                        <span>{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="pricing-split">
+                    <div className="split-price veg">Veg: {selectedPackage.vegPrice}</div>
+                    <div className="split-price non-veg">Non-Veg: {selectedPackage.nonVegPrice}</div>
+                  </div>
+                </>
+              )}
+
+            </div>
+
+            <div className="modal-footer">
+              <button className="book-btn-modal" onClick={() => handleBookNow(selectedPackage.title)}>
+                Book This Package via WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };

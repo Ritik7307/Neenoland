@@ -42,6 +42,8 @@ img {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -56,11 +58,10 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   width: 100%;
-  max-width: 100vw;
+  position: relative;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-

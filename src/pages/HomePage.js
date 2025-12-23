@@ -149,15 +149,7 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Small Item: VR */}
-            <div className="bento-item small box-vr">
-              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2749.JPG')}')` }}></div>
-              <div className="bento-content centered">
-                <h3>VR World</h3>
-                <p>Play beyond reality</p>
-                {/* <div className="bento-icon">🕶️</div> */}
-              </div>
-            </div>
+
 
             {/* Small Item: Bowling */}
             {/* <div className="bento-item small box-bowling">

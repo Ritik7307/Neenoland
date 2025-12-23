@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import anime from 'animejs';
 import '../components/Home.css';
+import { getImageUrl, getVideoUrl } from '../config/images';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
@@ -66,7 +67,7 @@ const HomePage = () => {
       <section className="hero-section">
         <div className="video-background-container" style={{ transform: `scale(1.1) translate(${rotation.y * -0.5}px, ${rotation.x * -0.5}px)`, transition: 'transform 0.1s linear' }}>
           <video
-            src="/images/video.mp4"
+            src={getVideoUrl("video.mp4")}
             className="video-background"
             autoPlay loop muted playsInline
             style={{ filter: 'brightness(0.6)' }}
@@ -105,7 +106,7 @@ const HomePage = () => {
           <div className="bento-grid">
             {/* Large Item: Playzone */}
             <div className="bento-item large box-playzone">
-              <div className="bento-bg" style={{ backgroundImage: "url('/images/1G4A2473.JPG')" }}></div>
+              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2473.JPG')}')` }}></div>
               <div className="bento-content">
                 <h3>Soft Play Area</h3>
                 <p>Safe & colorful adventures for little ones.</p>
@@ -115,7 +116,7 @@ const HomePage = () => {
 
             {/* Medium Item: Cafe */}
             <div className="bento-item medium box-cafe">
-              <div className="bento-bg" style={{ backgroundImage: "url('/images/1G4A2808.JPG')" }}></div>
+              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2808.JPG')}')` }}></div>
               <div className="bento-content">
                 <h3>Global Tastes Cafe</h3>
                 <p>Delicious treats while you play.</p>
@@ -125,7 +126,7 @@ const HomePage = () => {
 
             {/* Medium Item: Arcade */}
             <div className="bento-item medium box-arcade">
-              <div className="bento-bg" style={{ backgroundImage: "url('/images/1G4A2674.JPG')" }}></div>
+              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2674.JPG')}')` }}></div>
               <div className="bento-content">
                 <h3>Arcade Zone</h3>
                 <p>Next-gen gaming experience.</p>
@@ -135,7 +136,7 @@ const HomePage = () => {
 
             {/* Wide Item: Trampoline */}
             <div className="bento-item wide box-trampoline">
-              <div className="bento-bg" style={{ backgroundImage: "url('/images/1G4A2643.JPG')" }}></div>
+              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2643.JPG')}')` }}></div>
               <div className="bento-content">
                 <h3>Trampoline Park</h3>
                 <p>Jump high and defy gravity!</p>
@@ -145,7 +146,7 @@ const HomePage = () => {
 
             {/* Small Item: VR */}
             <div className="bento-item small box-vr">
-              <div className="bento-bg" style={{ backgroundImage: "url('/images/1G4A2749.JPG')" }}></div>
+              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2749.JPG')}')` }}></div>
               <div className="bento-content centered">
                 <h3>VR World</h3>
                 <p>Play beyond reality</p>
@@ -177,25 +178,25 @@ const HomePage = () => {
           <div className="marquee-track">
             {/* Set 1 */}
             <div className="marquee-group">
-              <img src="/images/1G4A2473.JPG" alt="Gallery 1" />
-              <img src="/images/1G4A2495.JPG" alt="Gallery 2" />
-              <img src="/images/1G4A2552.JPG" alt="Gallery 3" />
-              <img src="/images/1G4A2564.JPG" alt="Gallery 4" />
-              <img src="/images/1G4A2645.JPG" alt="Gallery 5" />
-              <img src="/images/1G4A2772.JPG" alt="Gallery 6" />
-              <img src="/images/1G4A2867.JPG" alt="Gallery 7" />
-              <img src="/images/1G4A2503.JPG" alt="Gallery 8" />
+              <img src={getImageUrl("1G4A2473.JPG")} alt="Gallery 1" />
+              <img src={getImageUrl("1G4A2495.JPG")} alt="Gallery 2" />
+              <img src={getImageUrl("1G4A2552.JPG")} alt="Gallery 3" />
+              <img src={getImageUrl("1G4A2564.JPG")} alt="Gallery 4" />
+              <img src={getImageUrl("1G4A2645.JPG")} alt="Gallery 5" />
+              <img src={getImageUrl("1G4A2772.JPG")} alt="Gallery 6" />
+              <img src={getImageUrl("1G4A2867.JPG")} alt="Gallery 7" />
+              <img src={getImageUrl("1G4A2503.JPG")} alt="Gallery 8" />
             </div>
             {/* Set 2 (Duplicate for seamless loop) */}
             <div className="marquee-group">
-              <img src="/images/1G4A2473.JPG" alt="Gallery 1" />
-              <img src="/images/1G4A2495.JPG" alt="Gallery 2" />
-              <img src="/images/1G4A2552.JPG" alt="Gallery 3" />
-              <img src="/images/1G4A2564.JPG" alt="Gallery 4" />
-              <img src="/images/1G4A2645.JPG" alt="Gallery 5" />
-              <img src="/images/1G4A2772.JPG" alt="Gallery 6" />
-              <img src="/images/1G4A2867.JPG" alt="Gallery 7" />
-              <img src="/images/1G4A2503.JPG" alt="Gallery 8" />
+              <img src={getImageUrl("1G4A2473.JPG")} alt="Gallery 1" />
+              <img src={getImageUrl("1G4A2495.JPG")} alt="Gallery 2" />
+              <img src={getImageUrl("1G4A2552.JPG")} alt="Gallery 3" />
+              <img src={getImageUrl("1G4A2564.JPG")} alt="Gallery 4" />
+              <img src={getImageUrl("1G4A2645.JPG")} alt="Gallery 5" />
+              <img src={getImageUrl("1G4A2772.JPG")} alt="Gallery 6" />
+              <img src={getImageUrl("1G4A2867.JPG")} alt="Gallery 7" />
+              <img src={getImageUrl("1G4A2503.JPG")} alt="Gallery 8" />
             </div>
           </div>
         </div>

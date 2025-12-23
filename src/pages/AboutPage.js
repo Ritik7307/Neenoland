@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import './AboutPage.css';
+import { getImageUrl } from '../config/images';
 
 // Data for "What We Offer"
 const offerings = [
@@ -70,7 +71,7 @@ const AboutPage = () => {
                   I will use a placeholder or the generated file URI if I can copy it to public.
                   I'll use a placeholder variable for now and assume I copy the file later or use the data URI.
                */}
-                            <img src="/images/neenoland_story_neon_sign.png" alt="Happy Birthday Neon Sign" className="story-img" />
+                            <img src={getImageUrl("neenoland_story_neon_sign.png")} alt="Happy Birthday Neon Sign" className="story-img" />
                         </div>
                         <div className="story-text glass-panel">
                             <p>

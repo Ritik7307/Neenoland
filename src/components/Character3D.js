@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { getImageUrl } from '../config/images';
 import './Character3D.css';
 
 const Character3D = () => {
@@ -50,7 +51,7 @@ const Character3D = () => {
                 }}
             >
                 <img
-                    src="/images/Character.png"
+                    src={getImageUrl("Character.png")}
                     alt="Neenoland Character"
                     className="character-image"
                 />

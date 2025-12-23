@@ -111,7 +111,7 @@ const HomePage = () => {
           <div className="bento-grid">
             {/* Large Item: Playzone */}
             <div className="bento-item large box-playzone">
-              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2473.JPG')}')` }}></div>
+              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2643.JPG')}')` }}></div>
               <div className="bento-content">
                 <h3>Soft Play Area</h3>
                 <p>Safe & colorful adventures for little ones.</p>
@@ -121,7 +121,7 @@ const HomePage = () => {
 
             {/* Medium Item: Cafe */}
             <div className="bento-item medium box-cafe">
-              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2808.JPG')}')` }}></div>
+              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2475.JPG')}')` }}></div>
               <div className="bento-content">
                 <h3>Global Tastes Cafe</h3>
                 <p>Delicious treats while you play.</p>
@@ -141,7 +141,7 @@ const HomePage = () => {
 
             {/* Wide Item: Trampoline */}
             <div className="bento-item wide box-trampoline">
-              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2643.JPG')}')` }}></div>
+              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2495.JPG')}')` }}></div>
               <div className="bento-content">
                 <h3>Trampoline Park</h3>
                 <p>Jump high and defy gravity!</p>

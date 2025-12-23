@@ -8,6 +8,8 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import { useNavigate } from 'react-router-dom';
 import ExperimentalLayer from '../components/ExperimentalLayer';
 
+
+
 const HomePage = () => {
   const navigate = useNavigate();
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
@@ -59,8 +61,11 @@ const HomePage = () => {
 
   }, []);
 
+
+
   return (
     <div className="home-page">
+
       <Navbar />
 
       {/* IMMERSIVE HERO SECTION */}

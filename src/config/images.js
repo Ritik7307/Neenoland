@@ -14,8 +14,8 @@ export const getImageUrl = (path) => {
     fileName = fileName.replace(/\.JPG$/, '.jpg').replace(/\.PNG$/, '.png');
 
     // Removed specific version 'v1...' as per user request to handle dynamic versions.
-    // Cloudinary supports versionless URLs.
-    return `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,q_auto/${fileName}`;
+    // Restoring 'v1' which is a standard convention for Cloudinary generic versions
+    return `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,q_auto/v1/${fileName}`;
 };
 
 /**
@@ -30,6 +30,6 @@ export const getVideoUrl = (path) => {
     let fileName = cleanPath.replace(/^images\//, '');
 
     // Video URL structure: .../video/upload/...
-    // We removed version numbers here too for consistency.
-    return `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/video/upload/f_auto,q_auto/${fileName}`;
+    // Video URL structure: .../video/upload/...
+    return `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/video/upload/f_auto,q_auto/v1/${fileName}`;
 };

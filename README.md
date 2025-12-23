@@ -72,7 +72,7 @@ Update the contact details in `src/components/Home.js`:
 
 ```javascript
 const phoneNumber = "+919876543210"; // Your phone number
-const email = "info@neenoland.com"; // Your email
+const email = "neenoland4u@gmail.com"; // Your email
 const address = "Indirapuram, Ghaziabad, Uttar Pradesh"; // Your address
 const instagramUrl = "https://www.instagram.com/neenoland"; // Your Instagram URL
 const facebookUrl = "https://www.facebook.com/neenoland"; // Your Facebook URL

@@ -171,14 +171,15 @@ const PackagesPage = () => {
   ];
 
   // Data for "Party Booking Charges Includes"
+  // Data for "Party Booking Charges Includes"
   const partyInclusions = [
     {
       id: 1,
       title: "Unlimited Access For Playzone Games",
       images: [
-        getImageUrl("neenoland_playzone.png"),
-        getImageUrl("1G4A2473.JPG"),
-        getImageUrl("1G4A2475.JPG")
+        getImageUrl("1G4A2503.JPG"),
+        getImageUrl("1G4A2645.JPG"),
+        getImageUrl("1G4A2495.JPG")
       ],
       desc: "Let the kids go wild! Unlimited access to all arcade games, soft play areas, and adventure zones for the entire duration of the party."
     },
@@ -187,8 +188,8 @@ const PackagesPage = () => {
       title: "Cake Cutting Ceremony On Stage",
       images: [
         getImageUrl("neenoland_cake.png"),
-        getImageUrl("1G4A2477.JPG"),
-        getImageUrl("1G4A2478.JPG")
+        getImageUrl("1G4A2772.JPG"),
+        getImageUrl("1G4A2808.JPG")
       ],
       desc: "Make your child the star of the show with a grand cake cutting ceremony on our spotlight stage, complete with music and cheers!"
     },
@@ -196,9 +197,9 @@ const PackagesPage = () => {
       id: 3,
       title: "Personalized Sitting Space In Cafe",
       images: [
-        getImageUrl("1G4A2749.JPG"),
-        getImageUrl("1G4A2750.JPG"),
-        getImageUrl("1G4A2765.JPG")
+        getImageUrl("sitting_area.png"),
+        getImageUrl("1G4A2477.JPG"),
+        getImageUrl("1G4A2475.JPG")
       ],
       desc: "Enjoy reserved, comfortable seating for your adult guests in our themed cafe area, ensuring everyone can relax and socialize."
     },
@@ -206,9 +207,9 @@ const PackagesPage = () => {
       id: 4,
       title: "Multicolor Balloon's Decoration",
       images: [
-        getImageUrl("1G4A2643.JPG"),
-        getImageUrl("1G4A2645.JPG"),
-        getImageUrl("1G4A2674.JPG")
+        getImageUrl("balloons.jpg"),
+        getImageUrl("ba.jpg"),
+        getImageUrl("1G4A2473.JPG")
       ],
       desc: "We set the mood with vibrant balloon decorations that match your party theme, adding a splash of color and joy to the venue."
     },
@@ -216,9 +217,9 @@ const PackagesPage = () => {
       id: 5,
       title: "Dance/Fun/Party Music",
       images: [
-        getImageUrl("1G4A2867.JPG"),
-        getImageUrl("1G4A2808.JPG"),
-        getImageUrl("1G4A2796.JPG")
+        getImageUrl("fun1.jpg"),
+        getImageUrl("play.avif"),
+        getImageUrl("1G4A2489.JPG")
       ],
       desc: "Keep the energy high with our curated party playlists! From kids' favorites to groovy beats, the music never stops."
     }

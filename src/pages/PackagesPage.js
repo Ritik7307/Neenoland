@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
@@ -6,6 +6,12 @@ import './PackagesPage.css';
 import { getImageUrl } from '../config/images';
 
 const PackagesPage = () => {
+  // Page SEO
+  useEffect(() => {
+    document.title = 'Party Packages & Pricing | Neeno Land - Birthday Party Venue Ghaziabad';
+    document.querySelector('meta[name="description"]')?.setAttribute('content',
+      'Explore our birthday party packages at Neeno Land. Silver, Gold packages with unlimited play, cake ceremony, decorations & food. Book your party venue in Indirapuram, Ghaziabad.');
+  }, []);
   const [selectedPackage, setSelectedPackage] = useState(null);
 
   const handleBookNow = (packageType) => {

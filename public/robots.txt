@@ -1,0 +1,12 @@
+# Robots.txt for Neeno Land
+# https://neenoland.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://neenoland.com/sitemap.xml
+
+# Disallow build/development files
+Disallow: /static/js/*.map
+Disallow: /static/css/*.map

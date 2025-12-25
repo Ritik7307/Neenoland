@@ -27,8 +27,11 @@ const HomePage = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Animations
+  // Animations and Page SEO
   useEffect(() => {
+    // Page SEO
+    document.title = 'Neeno Land - Best Kids Party Venue & Indoor Play Area in Indirapuram, Ghaziabad';
+
     // Hero Text Animation
     anime({
       targets: '.hero-text-anim',

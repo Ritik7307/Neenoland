@@ -42,9 +42,12 @@ const whyChooseUs = [
 ];
 
 const AboutPage = () => {
-    // Scroll to top on mount
+    // Scroll to top and page SEO on mount
     useEffect(() => {
         window.scrollTo(0, 0);
+        document.title = 'About Us | Neeno Land - Our Story & Vision | Kids Party Venue';
+        document.querySelector('meta[name="description"]')?.setAttribute('content',
+            'Learn about Neeno Land - the ultimate family entertainment destination in Indirapuram, Ghaziabad. Our story, vision, and what makes us the best kids party venue.');
     }, []);
 
     return (

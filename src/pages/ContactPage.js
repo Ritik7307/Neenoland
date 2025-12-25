@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import './ContactPage.css';
 
 const ContactPage = () => {
+  // Page SEO
+  useEffect(() => {
+    document.title = 'Contact Us | Neeno Land - Book Your Party in Indirapuram, Ghaziabad';
+    document.querySelector('meta[name="description"]')?.setAttribute('content',
+      'Contact Neeno Land for party bookings and inquiries. Visit us at Niti Khand-1, Indirapuram, Ghaziabad. Call or WhatsApp to book your birthday or kitty party.');
+  }, []);
   const phoneNumber = '+91-9266420361';
   // const phoneNumber2 = '+91-9266420361';
   const email = 'neenoland4u@gmail.com';

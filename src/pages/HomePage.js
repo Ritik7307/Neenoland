@@ -76,6 +76,7 @@ const HomePage = () => {
             className="video-background"
             autoPlay loop muted playsInline
             preload="auto"
+            fetchpriority="high"
             style={{ filter: 'brightness(0.6)' }}
           />
           <div className="hero-overlay-gradient"></div>
@@ -127,7 +128,7 @@ const HomePage = () => {
 
             {/* Medium Item: Cafe */}
             <div className="bento-item medium box-cafe">
-              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2475.JPG')}')` }}></div>
+              <img className="bento-bg-img" src={getImageUrl('1G4A2475.JPG')} alt="Cafe" loading="lazy" />
               <div className="bento-content">
                 <h3>Global Tastes Cafe</h3>
                 <p>Delicious treats while you play.</p>
@@ -152,7 +153,7 @@ const HomePage = () => {
 
             {/* Wide Item: Trampoline */}
             <div className="bento-item wide box-trampoline">
-              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2495.JPG')}')` }}></div>
+              <img className="bento-bg-img" src={getImageUrl('1G4A2495.JPG')} alt="Trampoline" loading="lazy" />
               <div className="bento-content">
                 <h3>Trampoline Park</h3>
                 <p>Jump high and defy gravity!</p>

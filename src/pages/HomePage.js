@@ -72,9 +72,10 @@ const HomePage = () => {
       <section className="hero-section">
         <div className="video-background-container" style={{ transform: `scale(1.1) translate(${rotation.y * -0.5}px, ${rotation.x * -0.5}px)`, transition: 'transform 0.1s linear' }}>
           <video
-            src="https://res.cloudinary.com/dnh1p0xax/video/upload/v1766639842/kqh5biuauk6p4vrvcyg8.mp4"
+            src="https://res.cloudinary.com/dnh1p0xax/video/upload/q_auto,f_auto,w_1920/v1766639842/kqh5biuauk6p4vrvcyg8.mp4"
             className="video-background"
             autoPlay loop muted playsInline
+            preload="auto"
             style={{ filter: 'brightness(0.6)' }}
           />
           <div className="hero-overlay-gradient"></div>
@@ -113,8 +114,9 @@ const HomePage = () => {
             <div className="bento-item large box-playzone">
               <video
                 className="bento-video-bg"
-                src="https://res.cloudinary.com/dnh1p0xax/video/upload/v1766639953/zzksbafixkq3oicgcrc0.mp4"
+                src="https://res.cloudinary.com/dnh1p0xax/video/upload/q_auto,f_auto,w_1280/v1766639953/zzksbafixkq3oicgcrc0.mp4"
                 autoPlay loop muted playsInline
+                preload="auto"
               />
               <div className="bento-content">
                 <h3>Soft Play Area</h3>
@@ -137,8 +139,9 @@ const HomePage = () => {
             <div className="bento-item medium box-arcade">
               <video
                 className="bento-video-bg"
-                src="https://res.cloudinary.com/dnh1p0xax/video/upload/v1766640008/onikmmdmotxlu2dugiog.mp4"
+                src="https://res.cloudinary.com/dnh1p0xax/video/upload/q_auto,f_auto,w_1280/v1766640008/onikmmdmotxlu2dugiog.mp4"
                 autoPlay loop muted playsInline
+                preload="auto"
               />
               <div className="bento-content">
                 <h3>Arcade Zone</h3>
@@ -183,25 +186,25 @@ const HomePage = () => {
           <div className="marquee-track">
             {/* Set 1 */}
             <div className="marquee-group">
-              <img src={getImageUrl("1G4A2473.JPG")} alt="Gallery 1" />
-              <img src={getImageUrl("1G4A2495.JPG")} alt="Gallery 2" />
-              <img src={getImageUrl("1G4A2552.JPG")} alt="Gallery 3" />
-              <img src={getImageUrl("1G4A2564.JPG")} alt="Gallery 4" />
-              <img src={getImageUrl("1G4A2645.JPG")} alt="Gallery 5" />
-              <img src={getImageUrl("1G4A2772.JPG")} alt="Gallery 6" />
-              <img src={getImageUrl("1G4A2867.JPG")} alt="Gallery 7" />
-              <img src={getImageUrl("1G4A2503.JPG")} alt="Gallery 8" />
+              <img src={getImageUrl("1G4A2473.JPG")} alt="Gallery 1" loading="lazy" />
+              <img src={getImageUrl("1G4A2495.JPG")} alt="Gallery 2" loading="lazy" />
+              <img src={getImageUrl("1G4A2552.JPG")} alt="Gallery 3" loading="lazy" />
+              <img src={getImageUrl("1G4A2564.JPG")} alt="Gallery 4" loading="lazy" />
+              <img src={getImageUrl("1G4A2645.JPG")} alt="Gallery 5" loading="lazy" />
+              <img src={getImageUrl("1G4A2772.JPG")} alt="Gallery 6" loading="lazy" />
+              <img src={getImageUrl("1G4A2867.JPG")} alt="Gallery 7" loading="lazy" />
+              <img src={getImageUrl("1G4A2503.JPG")} alt="Gallery 8" loading="lazy" />
             </div>
             {/* Set 2 (Duplicate for seamless loop) */}
             <div className="marquee-group">
-              <img src={getImageUrl("1G4A2473.JPG")} alt="Gallery 1" />
-              <img src={getImageUrl("1G4A2495.JPG")} alt="Gallery 2" />
-              <img src={getImageUrl("1G4A2552.JPG")} alt="Gallery 3" />
-              <img src={getImageUrl("1G4A2564.JPG")} alt="Gallery 4" />
-              <img src={getImageUrl("1G4A2645.JPG")} alt="Gallery 5" />
-              <img src={getImageUrl("1G4A2772.JPG")} alt="Gallery 6" />
-              <img src={getImageUrl("1G4A2867.JPG")} alt="Gallery 7" />
-              <img src={getImageUrl("1G4A2503.JPG")} alt="Gallery 8" />
+              <img src={getImageUrl("1G4A2473.JPG")} alt="Gallery 1" loading="lazy" />
+              <img src={getImageUrl("1G4A2495.JPG")} alt="Gallery 2" loading="lazy" />
+              <img src={getImageUrl("1G4A2552.JPG")} alt="Gallery 3" loading="lazy" />
+              <img src={getImageUrl("1G4A2564.JPG")} alt="Gallery 4" loading="lazy" />
+              <img src={getImageUrl("1G4A2645.JPG")} alt="Gallery 5" loading="lazy" />
+              <img src={getImageUrl("1G4A2772.JPG")} alt="Gallery 6" loading="lazy" />
+              <img src={getImageUrl("1G4A2867.JPG")} alt="Gallery 7" loading="lazy" />
+              <img src={getImageUrl("1G4A2503.JPG")} alt="Gallery 8" loading="lazy" />
             </div>
           </div>
         </div>

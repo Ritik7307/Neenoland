@@ -72,7 +72,7 @@ const HomePage = () => {
       <section className="hero-section">
         <div className="video-background-container" style={{ transform: `scale(1.1) translate(${rotation.y * -0.5}px, ${rotation.x * -0.5}px)`, transition: 'transform 0.1s linear' }}>
           <video
-            src="https://res.cloudinary.com/dnh1p0xax/video/upload/q_auto,f_auto,w_1920/v1766639842/kqh5biuauk6p4vrvcyg8.mp4"
+            src="https://res.cloudinary.com/dnh1p0xax/video/upload/q_auto,f_auto,w_1920,ac_none/v1766639842/kqh5biuauk6p4vrvcyg8.mp4"
             className="video-background"
             autoPlay loop muted playsInline
             preload="auto"

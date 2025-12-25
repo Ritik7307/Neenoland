@@ -72,7 +72,7 @@ const HomePage = () => {
       <section className="hero-section">
         <div className="video-background-container" style={{ transform: `scale(1.1) translate(${rotation.y * -0.5}px, ${rotation.x * -0.5}px)`, transition: 'transform 0.1s linear' }}>
           <video
-            src={getVideoUrl("video.mp4")}
+            src="https://res.cloudinary.com/dnh1p0xax/video/upload/v1766639842/kqh5biuauk6p4vrvcyg8.mp4"
             className="video-background"
             autoPlay loop muted playsInline
             style={{ filter: 'brightness(0.6)' }}
@@ -111,7 +111,11 @@ const HomePage = () => {
           <div className="bento-grid">
             {/* Large Item: Playzone */}
             <div className="bento-item large box-playzone">
-              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2643.JPG')}')` }}></div>
+              <video
+                className="bento-video-bg"
+                src="https://res.cloudinary.com/dnh1p0xax/video/upload/v1766639953/zzksbafixkq3oicgcrc0.mp4"
+                autoPlay loop muted playsInline
+              />
               <div className="bento-content">
                 <h3>Soft Play Area</h3>
                 <p>Safe & colorful adventures for little ones.</p>
@@ -131,7 +135,11 @@ const HomePage = () => {
 
             {/* Medium Item: Arcade */}
             <div className="bento-item medium box-arcade">
-              <div className="bento-bg" style={{ backgroundImage: `url('${getImageUrl('1G4A2674.JPG')}')` }}></div>
+              <video
+                className="bento-video-bg"
+                src="https://res.cloudinary.com/dnh1p0xax/video/upload/v1766640008/onikmmdmotxlu2dugiog.mp4"
+                autoPlay loop muted playsInline
+              />
               <div className="bento-content">
                 <h3>Arcade Zone</h3>
                 <p>Next-gen gaming experience.</p>

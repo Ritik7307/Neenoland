@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import EnquiryForm from '../components/EnquiryForm';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -92,6 +93,13 @@ const ContactPage = () => {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Enquiry Form Section */}
+      <section className="enquiry-section">
+        <div className="container">
+          <EnquiryForm />
         </div>
       </section>
 

@@ -457,3 +457,9 @@
     margin-bottom: 30px;
   }
 }
+
+/* Enquiry Form Section */
+.enquiry-section {
+  padding: 100px 20px;
+  background: var(--bg-light);
+}

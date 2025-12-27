@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import EnquiryButton from '../components/EnquiryButton';
 import './AboutPage.css';
 import { getImageUrl } from '../config/images';
 
@@ -131,6 +132,7 @@ const AboutPage = () => {
             </section>
 
             <WhatsAppButton />
+            <EnquiryButton />
             <Footer />
         </div>
     );

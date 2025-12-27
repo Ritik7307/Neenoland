@@ -5,6 +5,7 @@ import { getImageUrl, getVideoUrl } from '../config/images';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import EnquiryButton from '../components/EnquiryButton';
 import { useNavigate } from 'react-router-dom';
 import ExperimentalLayer from '../components/ExperimentalLayer';
 
@@ -215,6 +216,7 @@ const HomePage = () => {
       </section>
 
       <WhatsAppButton />
+      <EnquiryButton />
       <ExperimentalLayer />
       <Footer />
     </div>

@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section">
             <img
-              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,fit=crop,q=95/AoPqJvwLLKugBZVa/neeno-land-logo-YNqMarZv7OuRLBeL.png"
+              src="/logo-logo.png"
               alt="Neeno Land Logo"
               className="footer-logo"
             />

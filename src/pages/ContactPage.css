@@ -462,4 +462,23 @@
 .enquiry-section {
   padding: 100px 20px;
   background: var(--bg-light);
+  border-radius: 20px;
+  margin: 40px 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .enquiry-section {
+    margin: 20px 10px;
+    border-radius: 15px;
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .enquiry-section {
+    margin: 15px 5px;
+    border-radius: 12px;
+    padding: 40px 15px;
+  }
 }

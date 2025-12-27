@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import EnquiryButton from '../components/EnquiryButton';
 import EnquiryForm from '../components/EnquiryForm';
 import './ContactPage.css';
 
@@ -11,6 +12,41 @@ const ContactPage = () => {
     document.title = 'Contact Us | Neeno Land - Book Your Party in Indirapuram, Ghaziabad';
     document.querySelector('meta[name="description"]')?.setAttribute('content',
       'Contact Neeno Land for party bookings and inquiries. Visit us at Niti Khand-1, Indirapuram, Ghaziabad. Call or WhatsApp to book your birthday or kitty party.');
+  }, []);
+
+  // Scroll to enquiry form if hash is present
+  useEffect(() => {
+    const handleHashScroll = () => {
+      if (window.location.hash === '#enquiry') {
+        const scrollToForm = (attempts = 0) => {
+          const enquirySection = document.getElementById('enquiry-form-section');
+          if (enquirySection) {
+            const offset = 120;
+            const elementPosition = enquirySection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          } else if (attempts < 10) {
+            // Retry if element not found yet
+            setTimeout(() => scrollToForm(attempts + 1), 100);
+          }
+        };
+        // Start scrolling after a short delay
+        setTimeout(() => scrollToForm(), 100);
+      }
+    };
+
+    // Check on mount
+    handleHashScroll();
+
+    // Also listen for hash changes
+    window.addEventListener('hashchange', handleHashScroll);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashScroll);
+    };
   }, []);
   const phoneNumber = '+91-9266420361';
   // const phoneNumber2 = '+91-9266420361';
@@ -97,7 +133,7 @@ const ContactPage = () => {
       </section>
 
       {/* Enquiry Form Section */}
-      <section className="enquiry-section">
+      <section id="enquiry-form-section" className="enquiry-section">
         <div className="container">
           <EnquiryForm />
         </div>
@@ -138,6 +174,7 @@ const ContactPage = () => {
       </section>
 
       <WhatsAppButton />
+      <EnquiryButton />
       <Footer />
     </div>
   );

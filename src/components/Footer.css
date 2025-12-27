@@ -30,6 +30,9 @@
   object-fit: contain;
   margin-bottom: 15px;
   opacity: 1;
+  background: transparent;
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .footer-section p {

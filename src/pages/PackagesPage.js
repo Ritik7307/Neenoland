@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import EnquiryButton from '../components/EnquiryButton';
 import './PackagesPage.css';
 import { getImageUrl } from '../config/images';
 
@@ -387,6 +388,7 @@ const PackagesPage = () => {
       </section>
 
       <WhatsAppButton />
+      <EnquiryButton />
       <Footer />
 
       {/* PACKAGE DETAIL MODAL */}

@@ -86,6 +86,17 @@ const EnquiryForm = () => {
       const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
       const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
+      // Validate environment variables
+      if (!serviceId || serviceId.trim() === '') {
+        throw new Error('EmailJS Service ID is not configured. Please check your .env file.');
+      }
+      if (!templateId || templateId.trim() === '') {
+        throw new Error('EmailJS Template ID is not configured. Please check your .env file.');
+      }
+      if (!publicKey || publicKey.trim() === '') {
+        throw new Error('EmailJS Public Key is not configured. Please check your .env file.');
+      }
+
       // Template parameters that will be sent to EmailJS
       const templateParams = {
         from_name: formData.name,
@@ -97,12 +108,21 @@ const EnquiryForm = () => {
       };
 
       // Send email using EmailJS
-      await emailjs.send(
+      console.log('Sending email with:', {
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey: publicKey ? `${publicKey.substring(0, 5)}...` : 'missing'
+      });
+
+      const response = await emailjs.send(
         serviceId,
         templateId,
         templateParams,
         publicKey
       );
+
+      console.log('Email sent successfully:', response);
 
       setSubmitStatus('success');
       setFormData({
@@ -117,8 +137,55 @@ const EnquiryForm = () => {
       }, 5000);
     } catch (error) {
       console.error('Error submitting form:', error);
+      console.error('Error details:', {
+        message: error.message,
+        text: error.text,
+        status: error.status,
+        serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID ? 'Set' : 'Missing',
+        templateId: process.env.REACT_APP_EMAILJS_TEMPLATE_ID ? 'Set' : 'Missing',
+        publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY ? 'Set' : 'Missing'
+      });
+
+      // Provide specific error messages
+      let errorMsg = '';
+      
+      // Log full error for debugging
+      console.error('Full EmailJS error:', error);
+      
+      if (error.message) {
+        if (error.message.includes('Service ID')) {
+          errorMsg = 'EmailJS Service ID is missing. Please check your .env file and restart the server.';
+        } else if (error.message.includes('Template ID')) {
+          errorMsg = 'EmailJS Template ID is missing. Please check your .env file and restart the server.';
+        } else if (error.message.includes('Public Key')) {
+          errorMsg = 'EmailJS Public Key is missing. Please check your .env file and restart the server.';
+        } else {
+          errorMsg = error.message;
+        }
+      }
+      
+      // Check for EmailJS specific errors
+      if (error.text) {
+        errorMsg = `EmailJS Error: ${error.text}`;
+      } else if (error.status) {
+        if (error.status === 400) {
+          errorMsg = 'Invalid EmailJS configuration. Please check your Service ID, Template ID, and template variables.';
+        } else if (error.status === 401) {
+          errorMsg = 'EmailJS authentication failed. Please check your Public Key.';
+        } else if (error.status === 404) {
+          errorMsg = 'EmailJS service or template not found. Please verify your Service ID and Template ID.';
+        } else {
+          errorMsg = `EmailJS Error (${error.status}): ${error.text || 'Please check your EmailJS configuration.'}`;
+        }
+      }
+      
+      // Fallback message
+      if (!errorMsg) {
+        errorMsg = 'Failed to submit enquiry. Please check your EmailJS configuration and try again.';
+      }
+
       setSubmitStatus('error');
-      setErrorMessage('Failed to submit enquiry. Please try again or contact us directly.');
+      setErrorMessage(errorMsg);
     } finally {
       setIsSubmitting(false);
     }

@@ -184,9 +184,18 @@ const PackagesPage = () => {
       id: 1,
       title: "Unlimited Access For Playzone Games",
       images: [
-        getImageUrl("1G4A2503.JPG"),
-        getImageUrl("1G4A2645.JPG"),
-        getImageUrl("1G4A2495.JPG")
+        getImageUrl("1G4A2552.jpg"),
+        getImageUrl("1G4A2676.jpg"),
+        getImageUrl("1G4A2495.jpg"),
+        getImageUrl("neenoland_playzone.jpg"),
+        getImageUrl("playzone.jpeg"),
+        getImageUrl("playzone 1.jpeg"),
+        getImageUrl("playzone 22.jpeg"),
+        getImageUrl("playzone 3.jpeg"),
+        getImageUrl("playzone 4.jpeg"),
+        getImageUrl("soft balls.jpeg"),
+        getImageUrl("playssone.jpeg"),
+        getImageUrl("plazone.jpeg")
       ],
       desc: "Let the kids go wild! Unlimited access to all arcade games, soft play areas, and adventure zones for the entire duration of the party."
     },
@@ -194,9 +203,10 @@ const PackagesPage = () => {
       id: 2,
       title: "Cake Cutting Ceremony On Stage",
       images: [
-        getImageUrl("neenoland_cake.png"),
-        getImageUrl("1G4A2772.JPG"),
-        getImageUrl("1G4A2808.JPG")
+        getImageUrl("neenoland_cake.jpg"),
+        getImageUrl("happy birthday.jpeg"),
+        getImageUrl("1G4A2808.jpg"),
+        getImageUrl("stage.jpeg")
       ],
       desc: "Make your child the star of the show with a grand cake cutting ceremony on our spotlight stage, complete with music and cheers!"
     },
@@ -204,9 +214,10 @@ const PackagesPage = () => {
       id: 3,
       title: "Personalized Sitting Space In Cafe",
       images: [
-        getImageUrl("sitting_area.png"),
-        getImageUrl("1G4A2477.JPG"),
-        getImageUrl("1G4A2475.JPG")
+        getImageUrl("sitting.avif"),
+        getImageUrl("moeralpgh0zlrnq80dke.jpg"),
+        getImageUrl("1G4A2796.jpg"),
+        getImageUrl("eating.jpeg")
       ],
       desc: "Enjoy reserved, comfortable seating for your adult guests in our themed cafe area, ensuring everyone can relax and socialize."
     },
@@ -214,9 +225,9 @@ const PackagesPage = () => {
       id: 4,
       title: "Multicolor Balloon's Decoration",
       images: [
-        getImageUrl("balloons.jpg"),
-        getImageUrl("ba.jpg"),
-        getImageUrl("1G4A2473.JPG")
+        getImageUrl("decoration.jpeg"),
+        getImageUrl("g3gictoxytip6nyyhipz.jpg"),
+        getImageUrl("1G4A2508.jpg")
       ],
       desc: "We set the mood with vibrant balloon decorations that match your party theme, adding a splash of color and joy to the venue."
     },
@@ -224,9 +235,9 @@ const PackagesPage = () => {
       id: 5,
       title: "Dance/Fun/Party Music",
       images: [
-        getImageUrl("fun1.jpg"),
+        getImageUrl("stage.jpeg"),
         getImageUrl("play.avif"),
-        getImageUrl("1G4A2489.JPG")
+        getImageUrl("1G4A2867.jpg")
       ],
       desc: "Keep the energy high with our curated party playlists! From kids' favorites to groovy beats, the music never stops."
     }

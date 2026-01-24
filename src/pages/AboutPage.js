@@ -75,7 +75,7 @@ const AboutPage = () => {
                   I will use a placeholder or the generated file URI if I can copy it to public.
                   I'll use a placeholder variable for now and assume I copy the file later or use the data URI.
                */}
-                            <img src={getImageUrl("neenoland_story_neon_sign.png")} alt="Happy Birthday Neon Sign" className="story-img" />
+                            <img src={getImageUrl("happy birthday.jpeg")} alt="Happy Birthday Party" className="story-img" />
                         </div>
                         <div className="story-text glass-panel">
                             <p>

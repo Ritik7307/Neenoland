@@ -268,7 +268,7 @@ body {
   pointer-events: none;
   z-index: 9999;
   opacity: 0.05;
-  background: url('https://grainy-gradients.vercel.app/noise.svg');
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3Cfilter%20id='noiseFilter'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.65'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   background-size: 200px;
 }
 

@@ -11,6 +11,49 @@ import ExperimentalLayer from '../components/ExperimentalLayer';
 
 
 
+const LazyVideo = ({ src, poster, className }) => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Play only when visible
+          const playPromise = videoRef.current.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(error => {
+              // Auto-play was prevented
+              console.log("Autoplay prevented:", error);
+            });
+          }
+        } else {
+          // Pause when out of view to save resources
+          videoRef.current.pause();
+        }
+      });
+    }, { threshold: 0.1 });
+
+    if (videoRef.current) observer.observe(videoRef.current);
+
+    return () => {
+      if (videoRef.current) observer.unobserve(videoRef.current);
+    };
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      className={className}
+      src={src}
+      poster={poster}
+      loop
+      muted
+      playsInline
+      preload="none"
+    />
+  );
+};
+
 const HomePage = () => {
   const navigate = useNavigate();
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
@@ -76,11 +119,12 @@ const HomePage = () => {
       <section className="hero-section">
         <div className="video-background-container" style={{ transform: `scale(1.1) translate(${rotation.y * -0.5}px, ${rotation.x * -0.5}px)`, transition: 'transform 0.1s linear' }}>
           <video
-            src="https://res.cloudinary.com/dnh1p0xax/video/upload/q_auto,f_auto,w_1920,ac_none/v1766639842/kqh5biuauk6p4vrvcyg8.mp4"
+            src={getVideoUrl("kqh5biuauk6p4vrvcyg8.mp4")}
             className="video-background"
             autoPlay loop muted playsInline
             preload="auto"
             fetchpriority="high"
+            poster={getImageUrl("neenoland_playzone.jpg")}
             style={{ filter: 'brightness(0.6)' }}
           />
           <div className="hero-overlay-gradient"></div>
@@ -117,11 +161,10 @@ const HomePage = () => {
           <div className="bento-grid">
             {/* Large Item: Playzone */}
             <div className="bento-item large box-playzone">
-              <video
+              <LazyVideo
                 className="bento-video-bg"
-                src="https://res.cloudinary.com/dnh1p0xax/video/upload/q_auto,f_auto,w_1280/v1766639953/zzksbafixkq3oicgcrc0.mp4"
-                autoPlay loop muted playsInline
-                preload="auto"
+                src={getVideoUrl("zzksbafixkq3oicgcrc0.mp4")}
+                poster={getImageUrl("playzone.jpeg")}
               />
               <div className="bento-content">
                 <h3>Soft Play Area</h3>
@@ -132,7 +175,7 @@ const HomePage = () => {
 
             {/* Medium Item: Cafe */}
             <div className="bento-item medium box-cafe">
-              <img className="bento-bg-img" src={getImageUrl('1G4A2475.JPG')} alt="Cafe" loading="lazy" />
+              <img className="bento-bg-img" src={getImageUrl('eating.jpeg')} alt="Cafe" loading="lazy" />
               <div className="bento-content">
                 <h3>Global Tastes Cafe</h3>
                 <p>Delicious treats while you play.</p>
@@ -142,11 +185,10 @@ const HomePage = () => {
 
             {/* Medium Item: Arcade */}
             <div className="bento-item medium box-arcade">
-              <video
+              <LazyVideo
                 className="bento-video-bg"
-                src="https://res.cloudinary.com/dnh1p0xax/video/upload/q_auto,f_auto,w_1280/v1766640008/onikmmdmotxlu2dugiog.mp4"
-                autoPlay loop muted playsInline
-                preload="auto"
+                src={getVideoUrl("onikmmdmotxlu2dugiog.mp4")}
+                poster={getImageUrl("playssone.jpeg")}
               />
               <div className="bento-content">
                 <h3>Arcade Zone</h3>
@@ -157,7 +199,7 @@ const HomePage = () => {
 
             {/* Wide Item: Trampoline */}
             <div className="bento-item wide box-trampoline">
-              <img className="bento-bg-img" src={getImageUrl('1G4A2495.JPG')} alt="Trampoline" loading="lazy" />
+              <img className="bento-bg-img" src={getImageUrl('1G4A2495.jpg')} alt="Trampoline" loading="lazy" />
               <div className="bento-content">
                 <h3>Trampoline Park</h3>
                 <p>Jump high and defy gravity!</p>
@@ -191,25 +233,49 @@ const HomePage = () => {
           <div className="marquee-track">
             {/* Set 1 */}
             <div className="marquee-group">
-              <img src={getImageUrl("1G4A2473.JPG")} alt="Gallery 1" loading="lazy" />
-              <img src={getImageUrl("1G4A2495.JPG")} alt="Gallery 2" loading="lazy" />
-              <img src={getImageUrl("1G4A2552.JPG")} alt="Gallery 3" loading="lazy" />
-              <img src={getImageUrl("1G4A2564.JPG")} alt="Gallery 4" loading="lazy" />
-              <img src={getImageUrl("1G4A2645.JPG")} alt="Gallery 5" loading="lazy" />
-              <img src={getImageUrl("1G4A2772.JPG")} alt="Gallery 6" loading="lazy" />
-              <img src={getImageUrl("1G4A2867.JPG")} alt="Gallery 7" loading="lazy" />
-              <img src={getImageUrl("1G4A2503.JPG")} alt="Gallery 8" loading="lazy" />
+              <img src={getImageUrl("1G4A2495.jpg")} alt="Gallery 1" loading="lazy" />
+              <img src={getImageUrl("1G4A2508.jpg")} alt="Gallery 2" loading="lazy" />
+              <img src={getImageUrl("1G4A2552.jpg")} alt="Gallery 3" loading="lazy" />
+              <img src={getImageUrl("1G4A2676.jpg")} alt="Gallery 4" loading="lazy" />
+              <img src={getImageUrl("1G4A2796.jpg")} alt="Gallery 5" loading="lazy" />
+              <img src={getImageUrl("1G4A2808.jpg")} alt="Gallery 6" loading="lazy" />
+              <img src={getImageUrl("1G4A2867.jpg")} alt="Gallery 7" loading="lazy" />
+              <img src={getImageUrl("neenoland_playzone.jpg")} alt="Gallery 8" loading="lazy" />
+              <img src={getImageUrl("happy birthday.jpeg")} alt="Gallery 9" loading="lazy" />
+              <img src={getImageUrl("playzone.jpeg")} alt="Gallery 10" loading="lazy" />
+              <img src={getImageUrl("neenoland_cake.jpg")} alt="Gallery 11" loading="lazy" />
+              <img src={getImageUrl("sitting.avif")} alt="Gallery 12" loading="lazy" />
+              <img src={getImageUrl("decoration.jpeg")} alt="Gallery 13" loading="lazy" />
+              <img src={getImageUrl("g3gictoxytip6nyyhipz.jpg")} alt="Gallery 14" loading="lazy" />
+              <img src={getImageUrl("moeralpgh0zlrnq80dke.jpg")} alt="Gallery 15" loading="lazy" />
+              <img src={getImageUrl("playzone 1.jpeg")} alt="Gallery 16" loading="lazy" />
+              <img src={getImageUrl("playzone 22.jpeg")} alt="Gallery 17" loading="lazy" />
+              <img src={getImageUrl("playzone 3.jpeg")} alt="Gallery 18" loading="lazy" />
+              <img src={getImageUrl("playzone 4.jpeg")} alt="Gallery 19" loading="lazy" />
+              <img src={getImageUrl("soft balls.jpeg")} alt="Gallery 20" loading="lazy" />
             </div>
             {/* Set 2 (Duplicate for seamless loop) */}
             <div className="marquee-group">
-              <img src={getImageUrl("1G4A2473.JPG")} alt="Gallery 1" loading="lazy" />
-              <img src={getImageUrl("1G4A2495.JPG")} alt="Gallery 2" loading="lazy" />
-              <img src={getImageUrl("1G4A2552.JPG")} alt="Gallery 3" loading="lazy" />
-              <img src={getImageUrl("1G4A2564.JPG")} alt="Gallery 4" loading="lazy" />
-              <img src={getImageUrl("1G4A2645.JPG")} alt="Gallery 5" loading="lazy" />
-              <img src={getImageUrl("1G4A2772.JPG")} alt="Gallery 6" loading="lazy" />
-              <img src={getImageUrl("1G4A2867.JPG")} alt="Gallery 7" loading="lazy" />
-              <img src={getImageUrl("1G4A2503.JPG")} alt="Gallery 8" loading="lazy" />
+              <img src={getImageUrl("1G4A2495.jpg")} alt="Gallery 1" loading="lazy" />
+              <img src={getImageUrl("1G4A2508.jpg")} alt="Gallery 2" loading="lazy" />
+              <img src={getImageUrl("1G4A2552.jpg")} alt="Gallery 3" loading="lazy" />
+              <img src={getImageUrl("1G4A2676.jpg")} alt="Gallery 4" loading="lazy" />
+              <img src={getImageUrl("1G4A2796.jpg")} alt="Gallery 5" loading="lazy" />
+              <img src={getImageUrl("1G4A2808.jpg")} alt="Gallery 6" loading="lazy" />
+              <img src={getImageUrl("1G4A2867.jpg")} alt="Gallery 7" loading="lazy" />
+              <img src={getImageUrl("neenoland_playzone.jpg")} alt="Gallery 8" loading="lazy" />
+              <img src={getImageUrl("happy birthday.jpeg")} alt="Gallery 9" loading="lazy" />
+              <img src={getImageUrl("playzone.jpeg")} alt="Gallery 10" loading="lazy" />
+              <img src={getImageUrl("neenoland_cake.jpg")} alt="Gallery 11" loading="lazy" />
+              <img src={getImageUrl("sitting.avif")} alt="Gallery 12" loading="lazy" />
+              <img src={getImageUrl("decoration.jpeg")} alt="Gallery 13" loading="lazy" />
+              <img src={getImageUrl("g3gictoxytip6nyyhipz.jpg")} alt="Gallery 14" loading="lazy" />
+              <img src={getImageUrl("moeralpgh0zlrnq80dke.jpg")} alt="Gallery 15" loading="lazy" />
+              <img src={getImageUrl("playzone 1.jpeg")} alt="Gallery 16" loading="lazy" />
+              <img src={getImageUrl("playzone 22.jpeg")} alt="Gallery 17" loading="lazy" />
+              <img src={getImageUrl("playzone 3.jpeg")} alt="Gallery 18" loading="lazy" />
+              <img src={getImageUrl("playzone 4.jpeg")} alt="Gallery 19" loading="lazy" />
+              <img src={getImageUrl("soft balls.jpeg")} alt="Gallery 20" loading="lazy" />
             </div>
           </div>
         </div>

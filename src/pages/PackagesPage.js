@@ -48,7 +48,7 @@ const PackagesPage = () => {
     {
       id: 1,
       title: "Silver Celebration",
-      price: "₹ 15,999",
+      price: "₹ 16,999",
       duration: "3 Hours",
       tag: "Popular",
       desc: "Perfect for intimate gatherings and small birthday parties.",

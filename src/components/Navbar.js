@@ -90,6 +90,16 @@ const Navbar = () => {
             Contact Us
           </Link>
         </li>
+        <li>
+          <a
+            href="https://activitykidz.com/products/neeno-land-play-zone-indirapuram-ghaziabad?utm_source=vptnr"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMenu}
+          >
+            Ticketing Partner
+          </a>
+        </li>
       </ul>
     </nav>
   );
